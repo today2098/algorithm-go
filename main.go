@@ -59,6 +59,12 @@ func outArray[T any](arr []T) {
 	fmt.Fprintf(wr, "\n")
 }
 
+func fill[T any](v []T, x T) {
+	for i := 0; i < len(v); i++ {
+		v[i] = x
+	}
+}
+
 func min[T constraints.Ordered](a T, b T) T {
 	if a < b {
 		return a
@@ -119,6 +125,9 @@ func main() {
 	out(n, m, s)
 
 	v := getInts(n)
+	outArray(v)
+
+	fill(v, -1)
 	outArray(v)
 
 	out(min("hello", "world"), max("hello", "world"))
