@@ -8,9 +8,6 @@ data:
     path: algorithm/deque/deque.go
     title: algorithm/deque/deque.go
   - icon: ':heavy_check_mark:'
-    path: algorithm/queue/aoj-ALDS1_3_B.test.go
-    title: algorithm/queue/aoj-ALDS1_3_B.test.go
-  - icon: ':heavy_check_mark:'
     path: algorithm/queue/queue.go
     title: algorithm/queue/queue.go
   - icon: ':heavy_check_mark:'
@@ -19,6 +16,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: algorithm/stack/stack.go
     title: algorithm/stack/stack.go
+  - icon: ':heavy_check_mark:'
+    path: main.go
+    title: main.go
   - icon: ':heavy_check_mark:'
     path: test/aoj-ITP1_1_A.test.go
     title: test/aoj-ITP1_1_A.test.go
@@ -32,13 +32,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: algorithm/stack/stack.go
     title: algorithm/stack/stack.go
+  - icon: ':heavy_check_mark:'
+    path: main.go
+    title: main.go
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: algorithm/deque/aoj-ALDS1_3_C.test.go
     title: algorithm/deque/aoj-ALDS1_3_C.test.go
-  - icon: ':heavy_check_mark:'
-    path: algorithm/queue/aoj-ALDS1_3_B.test.go
-    title: algorithm/queue/aoj-ALDS1_3_B.test.go
   - icon: ':heavy_check_mark:'
     path: algorithm/stack/aoj-ALDS1_3_A.test.go
     title: algorithm/stack/aoj-ALDS1_3_A.test.go
@@ -48,52 +48,53 @@ data:
   _isVerificationFailed: false
   _pathExtension: go
   _verificationStatusIcon: ':heavy_check_mark:'
-  attributes: {}
+  attributes:
+    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/3/ALDS1_3_B
   bundledCode: "Traceback (most recent call last):\n  File \"/home/runner/.local/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/home/runner/.local/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
-    RuntimeError: bundler is not specified: main.go\n"
-  code: "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"math\"\n\t\"os\"\n\t\
-    \"strconv\"\n)\n\nvar sc = bufio.NewScanner(os.Stdin)\nvar wr = bufio.NewWriter(os.Stdout)\n\
-    \nfunc getInt() int {\n\tsc.Scan()\n\telem, err := strconv.Atoi(sc.Text())\n\t\
-    if err != nil {\n\t\tpanic(err)\n\t}\n\treturn elem\n}\n\nfunc getFloat64() float64\
-    \ {\n\tsc.Scan()\n\telem, err := strconv.ParseFloat(sc.Text(), 64)\n\tif err !=\
-    \ nil {\n\t\tpanic(err)\n\t}\n\treturn elem\n}\n\nfunc getString() string {\n\t\
-    sc.Scan()\n\treturn sc.Text()\n}\n\nfunc getInts(n int) []int {\n\tv := make([]int,\
-    \ n)\n\tfor i := 0; i < n; i++ {\n\t\tv[i] = getInt()\n\t}\n\treturn v\n}\n\n\
-    func out(x ...any) {\n\tfmt.Fprintln(wr, x...)\n}\n\nfunc outArray[T any](arr\
-    \ []T) {\n\tfor i := 0; i < len(arr)-1; i++ {\n\t\tfmt.Fprintf(wr, \"%v \", arr[i])\n\
-    \t}\n\tif len(arr) > 0 {\n\t\tfmt.Fprintf(wr, \"%v\", arr[len(arr)-1])\n\t}\n\t\
-    fmt.Fprintf(wr, \"\\n\")\n}\n\nfunc main() {\n\tsc.Split(bufio.ScanWords)\n\t\
-    sc.Buffer([]byte{}, math.MaxInt32)\n\tdefer wr.Flush()\n\n\tn, m, s := getInt(),\
-    \ getFloat64(), getString()\n\tout(n, m, s)\n\n\tv := getInts(n)\n\toutArray(v)\n\
-    }\n"
+    RuntimeError: bundler is not specified: algorithm/queue/aoj-ALDS1_3_B.test.go\n"
+  code: "//go:build ignore\n\n// verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/3/ALDS1_3_B\n\
+    \npackage main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"math\"\n\t\"os\"\n\t\"\
+    strconv\"\n\n\t\"github.com/today2098/algorithm-go/algorithm/queue\"\n)\n\nvar\
+    \ sc = bufio.NewScanner(os.Stdin)\nvar wr = bufio.NewWriter(os.Stdout)\n\nfunc\
+    \ getInt() int {\n\tsc.Scan()\n\telem, err := strconv.Atoi(sc.Text())\n\tif err\
+    \ != nil {\n\t\tpanic(err)\n\t}\n\treturn elem\n}\n\nfunc getString() string {\n\
+    \tsc.Scan()\n\treturn sc.Text()\n}\n\nfunc out(x ...any) {\n\tfmt.Fprintln(wr,\
+    \ x...)\n}\n\nfunc main() {\n\tsc.Split(bufio.ScanWords)\n\tsc.Buffer([]byte{},\
+    \ math.MaxInt32)\n\tdefer wr.Flush()\n\n\tn, q := getInt(), getInt()\n\n\ttype\
+    \ task struct {\n\t\tname string\n\t\ttime int\n\t}\n\tque := queue.NewQueue[*task]()\n\
+    \tfor i := 0; i < n; i++ {\n\t\tt := &task{}\n\t\tt.name, t.time = getString(),\
+    \ getInt()\n\t\tque.Push(t)\n\t}\n\n\tnow := 0\n\tfor !que.Empty() {\n\t\tt :=\
+    \ que.Pop()\n\t\tif t.time <= q {\n\t\t\tnow += t.time\n\t\t\tout(t.name, now)\n\
+    \t\t} else {\n\t\t\tnow += q\n\t\t\tt.time -= q\n\t\t\tque.Push(t)\n\t\t}\n\t\
+    }\n}\n"
   dependsOn:
+  - main.go
   - test/aoj-ITP1_1_A.test.go
   - algorithm/stack/aoj-ALDS1_3_A.test.go
   - algorithm/stack/stack.go
-  - algorithm/queue/aoj-ALDS1_3_B.test.go
   - algorithm/queue/queue.go
   - algorithm/deque/deque.go
   - algorithm/deque/aoj-ALDS1_3_C.test.go
-  isVerificationFile: false
-  path: main.go
+  isVerificationFile: true
+  path: algorithm/queue/aoj-ALDS1_3_B.test.go
   requiredBy:
+  - main.go
   - algorithm/stack/stack.go
   - algorithm/queue/queue.go
   - algorithm/deque/deque.go
   timestamp: '2024-08-24 17:41:38+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: TEST_ACCEPTED
   verifiedWith:
   - test/aoj-ITP1_1_A.test.go
   - algorithm/stack/aoj-ALDS1_3_A.test.go
-  - algorithm/queue/aoj-ALDS1_3_B.test.go
   - algorithm/deque/aoj-ALDS1_3_C.test.go
-documentation_of: main.go
+documentation_of: algorithm/queue/aoj-ALDS1_3_B.test.go
 layout: document
 redirect_from:
-- /library/main.go
-- /library/main.go.html
-title: main.go
+- /verify/algorithm/queue/aoj-ALDS1_3_B.test.go
+- /verify/algorithm/queue/aoj-ALDS1_3_B.test.go.html
+title: algorithm/queue/aoj-ALDS1_3_B.test.go
 ---

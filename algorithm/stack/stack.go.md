@@ -17,8 +17,8 @@ data:
     path: algorithm/stack/aoj-ALDS1_3_A.test.go
     title: algorithm/stack/aoj-ALDS1_3_A.test.go
   - icon: ':heavy_check_mark:'
-    path: algorithm/stack/stack.go
-    title: algorithm/stack/stack.go
+    path: main.go
+    title: main.go
   - icon: ':heavy_check_mark:'
     path: test/aoj-ITP1_1_A.test.go
     title: test/aoj-ITP1_1_A.test.go
@@ -30,8 +30,8 @@ data:
     path: algorithm/queue/queue.go
     title: algorithm/queue/queue.go
   - icon: ':heavy_check_mark:'
-    path: algorithm/stack/stack.go
-    title: algorithm/stack/stack.go
+    path: main.go
+    title: main.go
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: algorithm/deque/aoj-ALDS1_3_C.test.go
@@ -53,34 +53,30 @@ data:
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/home/runner/.local/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
-    RuntimeError: bundler is not specified: main.go\n"
-  code: "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"math\"\n\t\"os\"\n\t\
-    \"strconv\"\n)\n\nvar sc = bufio.NewScanner(os.Stdin)\nvar wr = bufio.NewWriter(os.Stdout)\n\
-    \nfunc getInt() int {\n\tsc.Scan()\n\telem, err := strconv.Atoi(sc.Text())\n\t\
-    if err != nil {\n\t\tpanic(err)\n\t}\n\treturn elem\n}\n\nfunc getFloat64() float64\
-    \ {\n\tsc.Scan()\n\telem, err := strconv.ParseFloat(sc.Text(), 64)\n\tif err !=\
-    \ nil {\n\t\tpanic(err)\n\t}\n\treturn elem\n}\n\nfunc getString() string {\n\t\
-    sc.Scan()\n\treturn sc.Text()\n}\n\nfunc getInts(n int) []int {\n\tv := make([]int,\
-    \ n)\n\tfor i := 0; i < n; i++ {\n\t\tv[i] = getInt()\n\t}\n\treturn v\n}\n\n\
-    func out(x ...any) {\n\tfmt.Fprintln(wr, x...)\n}\n\nfunc outArray[T any](arr\
-    \ []T) {\n\tfor i := 0; i < len(arr)-1; i++ {\n\t\tfmt.Fprintf(wr, \"%v \", arr[i])\n\
-    \t}\n\tif len(arr) > 0 {\n\t\tfmt.Fprintf(wr, \"%v\", arr[len(arr)-1])\n\t}\n\t\
-    fmt.Fprintf(wr, \"\\n\")\n}\n\nfunc main() {\n\tsc.Split(bufio.ScanWords)\n\t\
-    sc.Buffer([]byte{}, math.MaxInt32)\n\tdefer wr.Flush()\n\n\tn, m, s := getInt(),\
-    \ getFloat64(), getString()\n\tout(n, m, s)\n\n\tv := getInts(n)\n\toutArray(v)\n\
-    }\n"
+    RuntimeError: bundler is not specified: algorithm/stack/stack.go\n"
+  code: "package stack\n\nimport \"errors\"\n\nvar ErrStackEmpty = errors.New(\"Stack:\
+    \ stack is empty\")\n\ntype Stack[T any] struct {\n\tData []T\n}\n\nfunc NewStack[T\
+    \ any]() *Stack[T] {\n\treturn &Stack[T]{Data: []T{}}\n}\n\nfunc (s *Stack[T])\
+    \ Empty() bool {\n\treturn s.Size() == 0\n}\n\nfunc (s *Stack[T]) Size() int {\n\
+    \treturn len(s.Data)\n}\n\nfunc (s *Stack[T]) Top() T {\n\tif s.Empty() {\n\t\t\
+    panic(ErrStackEmpty)\n\t}\n\treturn s.Data[len(s.Data)-1]\n}\n\nfunc (s *Stack[T])\
+    \ Push(x T) {\n\ts.Data = append(s.Data, x)\n}\n\nfunc (s *Stack[T]) PushRange(v\
+    \ []T) {\n\tfor i := 0; i < len(v); i++ {\n\t\ts.Data = append(s.Data, v[i])\n\
+    \t}\n}\n\nfunc (s *Stack[T]) Pop() T {\n\tif s.Empty() {\n\t\tpanic(ErrStackEmpty)\n\
+    \t}\n\tres := s.Data[len(s.Data)-1]\n\ts.Data = s.Data[:len(s.Data)-1]\n\treturn\
+    \ res\n}\n"
   dependsOn:
+  - main.go
   - test/aoj-ITP1_1_A.test.go
   - algorithm/stack/aoj-ALDS1_3_A.test.go
-  - algorithm/stack/stack.go
   - algorithm/queue/aoj-ALDS1_3_B.test.go
   - algorithm/queue/queue.go
   - algorithm/deque/deque.go
   - algorithm/deque/aoj-ALDS1_3_C.test.go
   isVerificationFile: false
-  path: main.go
+  path: algorithm/stack/stack.go
   requiredBy:
-  - algorithm/stack/stack.go
+  - main.go
   - algorithm/queue/queue.go
   - algorithm/deque/deque.go
   timestamp: '2024-08-24 17:41:38+09:00'
@@ -90,10 +86,10 @@ data:
   - algorithm/stack/aoj-ALDS1_3_A.test.go
   - algorithm/queue/aoj-ALDS1_3_B.test.go
   - algorithm/deque/aoj-ALDS1_3_C.test.go
-documentation_of: main.go
+documentation_of: algorithm/stack/stack.go
 layout: document
 redirect_from:
-- /library/main.go
-- /library/main.go.html
-title: main.go
+- /library/algorithm/stack/stack.go
+- /library/algorithm/stack/stack.go.html
+title: algorithm/stack/stack.go
 ---
