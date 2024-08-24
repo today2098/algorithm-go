@@ -1,4 +1,6 @@
 {
-"test/aoj-ALDS1_3_A-stack.test.go": "2024-08-24 15:16:21 +0900",
-"test/aoj-ITP1_1_A.test.go": "2024-08-24 15:16:21 +0900"
+"algorithm/deque/aoj-ALDS1_3_C.test.go": "2024-08-24 17:41:38 +0900",
+"algorithm/queue/aoj-ALDS1_3_B.test.go": "2024-08-24 17:41:38 +0900",
+"algorithm/stack/aoj-ALDS1_3_A.test.go": "2024-08-24 17:41:38 +0900",
+"test/aoj-ITP1_1_A.test.go": "2024-08-24 17:41:38 +0900"
 }
