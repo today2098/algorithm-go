@@ -21,6 +21,9 @@ data:
   - name: test
     pages:
     - icon: ':heavy_check_mark:'
+      path: test/aoj-ALDS1_3_A-stack.test.go
+      title: test/aoj-ALDS1_3_A-stack.test.go
+    - icon: ':heavy_check_mark:'
       path: test/aoj-ITP1_1_A.test.go
       title: test/aoj-ITP1_1_A.test.go
 layout: toppage

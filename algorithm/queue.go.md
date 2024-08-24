@@ -11,6 +11,9 @@ data:
     path: main.go
     title: main.go
   - icon: ':heavy_check_mark:'
+    path: test/aoj-ALDS1_3_A-stack.test.go
+    title: test/aoj-ALDS1_3_A-stack.test.go
+  - icon: ':heavy_check_mark:'
     path: test/aoj-ITP1_1_A.test.go
     title: test/aoj-ITP1_1_A.test.go
   _extendedRequiredBy:
@@ -24,6 +27,9 @@ data:
     path: main.go
     title: main.go
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-ALDS1_3_A-stack.test.go
+    title: test/aoj-ALDS1_3_A-stack.test.go
   - icon: ':heavy_check_mark:'
     path: test/aoj-ITP1_1_A.test.go
     title: test/aoj-ITP1_1_A.test.go
@@ -49,6 +55,7 @@ data:
   dependsOn:
   - main.go
   - test/aoj-ITP1_1_A.test.go
+  - test/aoj-ALDS1_3_A-stack.test.go
   - algorithm/deque.go
   - algorithm/stack.go
   isVerificationFile: false
@@ -57,10 +64,11 @@ data:
   - main.go
   - algorithm/deque.go
   - algorithm/stack.go
-  timestamp: '2024-08-24 14:32:30+09:00'
+  timestamp: '2024-08-24 15:16:21+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj-ITP1_1_A.test.go
+  - test/aoj-ALDS1_3_A-stack.test.go
 documentation_of: algorithm/queue.go
 layout: document
 redirect_from:
