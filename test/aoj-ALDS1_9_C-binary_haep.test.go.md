@@ -20,6 +20,9 @@ data:
     path: algorithm/union_find.go
     title: algorithm/union_find.go
   - icon: ':heavy_check_mark:'
+    path: main.go
+    title: main.go
+  - icon: ':heavy_check_mark:'
     path: test/aoj-ALDS1_3_A-stack.test.go
     title: test/aoj-ALDS1_3_A-stack.test.go
   - icon: ':heavy_check_mark:'
@@ -28,9 +31,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj-ALDS1_3_C-deque.test.go
     title: test/aoj-ALDS1_3_C-deque.test.go
-  - icon: ':heavy_check_mark:'
-    path: test/aoj-ALDS1_9_C-binary_haep.test.go
-    title: test/aoj-ALDS1_9_C-binary_haep.test.go
   - icon: ':heavy_check_mark:'
     path: test/aoj-DSL_1_A-union_find.test.go
     title: test/aoj-DSL_1_A-union_find.test.go
@@ -59,6 +59,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: algorithm/union_find.go
     title: algorithm/union_find.go
+  - icon: ':heavy_check_mark:'
+    path: main.go
+    title: main.go
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj-ALDS1_3_A-stack.test.go
@@ -69,9 +72,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj-ALDS1_3_C-deque.test.go
     title: test/aoj-ALDS1_3_C-deque.test.go
-  - icon: ':heavy_check_mark:'
-    path: test/aoj-ALDS1_9_C-binary_haep.test.go
-    title: test/aoj-ALDS1_9_C-binary_haep.test.go
   - icon: ':heavy_check_mark:'
     path: test/aoj-DSL_1_A-union_find.test.go
     title: test/aoj-DSL_1_A-union_find.test.go
@@ -84,41 +84,30 @@ data:
   _isVerificationFailed: false
   _pathExtension: go
   _verificationStatusIcon: ':heavy_check_mark:'
-  attributes: {}
+  attributes:
+    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/9/ALDS1_9_C
   bundledCode: "Traceback (most recent call last):\n  File \"/home/runner/.local/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/home/runner/.local/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
-    RuntimeError: bundler is not specified: main.go\n"
-  code: "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"math\"\n\t\"os\"\n\t\
-    \"sort\"\n\t\"strconv\"\n\n\t\"golang.org/x/exp/constraints\"\n)\n\nvar sc = bufio.NewScanner(os.Stdin)\n\
-    var wr = bufio.NewWriter(os.Stdout)\n\nfunc getInt() int {\n\tsc.Scan()\n\telem,\
-    \ err := strconv.Atoi(sc.Text())\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\treturn\
-    \ elem\n}\n\nfunc getFloat64() float64 {\n\tsc.Scan()\n\telem, err := strconv.ParseFloat(sc.Text(),\
-    \ 64)\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\treturn elem\n}\n\nfunc getString()\
-    \ string {\n\tsc.Scan()\n\treturn sc.Text()\n}\n\nfunc getInts(n int) []int {\n\
-    \tv := make([]int, n)\n\tfor i := 0; i < n; i++ {\n\t\tv[i] = getInt()\n\t}\n\t\
-    return v\n}\n\nfunc out(x ...any) {\n\tfmt.Fprintln(wr, x...)\n}\n\nfunc outArray[T\
-    \ any](arr []T) {\n\tfor i := 0; i < len(arr)-1; i++ {\n\t\tfmt.Fprintf(wr, \"\
-    %v \", arr[i])\n\t}\n\tif len(arr) > 0 {\n\t\tfmt.Fprintf(wr, \"%v\", arr[len(arr)-1])\n\
-    \t}\n\tfmt.Fprintf(wr, \"\\n\")\n}\n\nfunc min[T constraints.Ordered](a T, b T)\
-    \ T {\n\tif a < b {\n\t\treturn a\n\t}\n\treturn b\n}\n\nfunc max[T constraints.Ordered](a\
-    \ T, b T) T {\n\tif a > b {\n\t\treturn a\n\t}\n\treturn b\n}\n\nfunc abs[T constraints.Integer\
-    \ | constraints.Float](a T) T {\n\tif a >= 0 {\n\t\treturn a\n\t}\n\treturn -a\n\
-    }\n\nfunc lowerBound[T constraints.Ordered](v []T, x T) int {\n\titr := sort.Search(len(v),\
-    \ func(i int) bool {\n\t\treturn v[i] >= x\n\t})\n\treturn itr\n}\n\nfunc upperBound[T\
-    \ constraints.Ordered](v []T, x T) int {\n\titr := sort.Search(len(v), func(i\
-    \ int) bool {\n\t\treturn v[i] > x\n\t})\n\treturn itr\n}\n\nfunc main() {\n\t\
-    sc.Split(bufio.ScanWords)\n\tsc.Buffer([]byte{}, math.MaxInt32)\n\tdefer wr.Flush()\n\
-    \n\tn, m, s := getInt(), getFloat64(), getString()\n\tout(n, m, s)\n\n\tv := getInts(n)\n\
-    \toutArray(v)\n\n\tout(min(\"hello\", \"world\"), max(\"hello\", \"world\"))\n\
-    \tout(abs(-10), abs(10))\n\n\tw := []int{1, 2, 3, 4, 5}\n\tout(lowerBound(w, 3),\
-    \ upperBound(w, 3))\n}\n"
+    RuntimeError: bundler is not specified: test/aoj-ALDS1_9_C-binary_haep.test.go\n"
+  code: "//go:build ignore\n\n// verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/9/ALDS1_9_C\n\
+    \npackage main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"math\"\n\t\"os\"\n\t\"\
+    strconv\"\n\n\t\"github.com/today2098/algorithm-go/algorithm\"\n)\n\nvar sc =\
+    \ bufio.NewScanner(os.Stdin)\nvar wr = bufio.NewWriter(os.Stdout)\n\nfunc getInt()\
+    \ int {\n\tsc.Scan()\n\telem, err := strconv.Atoi(sc.Text())\n\tif err != nil\
+    \ {\n\t\tpanic(err)\n\t}\n\treturn elem\n}\n\nfunc getString() string {\n\tsc.Scan()\n\
+    \treturn sc.Text()\n}\n\nfunc out(x ...any) {\n\tfmt.Fprintln(wr, x...)\n}\n\n\
+    func main() {\n\tsc.Split(bufio.ScanWords)\n\tsc.Buffer([]byte{}, math.MaxInt32)\n\
+    \tdefer wr.Flush()\n\n\tpq := algorithm.NewDefaultBinaryHeap[int]()\n\tfor {\n\
+    \t\tquery := getString()\n\t\tif query == \"end\" {\n\t\t\tbreak\n\t\t}\n\n\t\t\
+    if query == \"insert\" {\n\t\t\tx := getInt()\n\t\t\tpq.Push(x)\n\t\t} else {\n\
+    \t\t\tout(pq.Pop())\n\t\t}\n\t}\n}\n"
   dependsOn:
+  - main.go
   - test/aoj-GRL_1_A-dijkstra.test.go
   - test/aoj-ALDS1_3_C-deque.test.go
   - test/aoj-ALDS1_3_B-queue.test.go
-  - test/aoj-ALDS1_9_C-binary_haep.test.go
   - test/aoj-ITP1_1_A.test.go
   - test/aoj-DSL_1_A-union_find.test.go
   - test/aoj-ALDS1_3_A-stack.test.go
@@ -128,9 +117,10 @@ data:
   - algorithm/queue.go
   - algorithm/binary_heap.go
   - algorithm/stack.go
-  isVerificationFile: false
-  path: main.go
+  isVerificationFile: true
+  path: test/aoj-ALDS1_9_C-binary_haep.test.go
   requiredBy:
+  - main.go
   - algorithm/deque.go
   - algorithm/union_find.go
   - algorithm/dijkstra.go
@@ -138,19 +128,18 @@ data:
   - algorithm/binary_heap.go
   - algorithm/stack.go
   timestamp: '2024-08-25 00:57:10+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: TEST_ACCEPTED
   verifiedWith:
   - test/aoj-GRL_1_A-dijkstra.test.go
   - test/aoj-ALDS1_3_C-deque.test.go
   - test/aoj-ALDS1_3_B-queue.test.go
-  - test/aoj-ALDS1_9_C-binary_haep.test.go
   - test/aoj-ITP1_1_A.test.go
   - test/aoj-DSL_1_A-union_find.test.go
   - test/aoj-ALDS1_3_A-stack.test.go
-documentation_of: main.go
+documentation_of: test/aoj-ALDS1_9_C-binary_haep.test.go
 layout: document
 redirect_from:
-- /library/main.go
-- /library/main.go.html
-title: main.go
+- /verify/test/aoj-ALDS1_9_C-binary_haep.test.go
+- /verify/test/aoj-ALDS1_9_C-binary_haep.test.go.html
+title: test/aoj-ALDS1_9_C-binary_haep.test.go
 ---

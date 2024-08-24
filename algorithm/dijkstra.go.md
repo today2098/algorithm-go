@@ -8,9 +8,6 @@ data:
     path: algorithm/deque.go
     title: algorithm/deque.go
   - icon: ':heavy_check_mark:'
-    path: algorithm/dijkstra.go
-    title: algorithm/dijkstra.go
-  - icon: ':heavy_check_mark:'
     path: algorithm/queue.go
     title: algorithm/queue.go
   - icon: ':heavy_check_mark:'
@@ -19,6 +16,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: algorithm/union_find.go
     title: algorithm/union_find.go
+  - icon: ':heavy_check_mark:'
+    path: main.go
+    title: main.go
   - icon: ':heavy_check_mark:'
     path: test/aoj-ALDS1_3_A-stack.test.go
     title: test/aoj-ALDS1_3_A-stack.test.go
@@ -48,9 +48,6 @@ data:
     path: algorithm/deque.go
     title: algorithm/deque.go
   - icon: ':heavy_check_mark:'
-    path: algorithm/dijkstra.go
-    title: algorithm/dijkstra.go
-  - icon: ':heavy_check_mark:'
     path: algorithm/queue.go
     title: algorithm/queue.go
   - icon: ':heavy_check_mark:'
@@ -59,6 +56,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: algorithm/union_find.go
     title: algorithm/union_find.go
+  - icon: ':heavy_check_mark:'
+    path: main.go
+    title: main.go
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj-ALDS1_3_A-stack.test.go
@@ -89,32 +89,41 @@ data:
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/home/runner/.local/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
-    RuntimeError: bundler is not specified: main.go\n"
-  code: "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"math\"\n\t\"os\"\n\t\
-    \"sort\"\n\t\"strconv\"\n\n\t\"golang.org/x/exp/constraints\"\n)\n\nvar sc = bufio.NewScanner(os.Stdin)\n\
-    var wr = bufio.NewWriter(os.Stdout)\n\nfunc getInt() int {\n\tsc.Scan()\n\telem,\
-    \ err := strconv.Atoi(sc.Text())\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\treturn\
-    \ elem\n}\n\nfunc getFloat64() float64 {\n\tsc.Scan()\n\telem, err := strconv.ParseFloat(sc.Text(),\
-    \ 64)\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\treturn elem\n}\n\nfunc getString()\
-    \ string {\n\tsc.Scan()\n\treturn sc.Text()\n}\n\nfunc getInts(n int) []int {\n\
-    \tv := make([]int, n)\n\tfor i := 0; i < n; i++ {\n\t\tv[i] = getInt()\n\t}\n\t\
-    return v\n}\n\nfunc out(x ...any) {\n\tfmt.Fprintln(wr, x...)\n}\n\nfunc outArray[T\
-    \ any](arr []T) {\n\tfor i := 0; i < len(arr)-1; i++ {\n\t\tfmt.Fprintf(wr, \"\
-    %v \", arr[i])\n\t}\n\tif len(arr) > 0 {\n\t\tfmt.Fprintf(wr, \"%v\", arr[len(arr)-1])\n\
-    \t}\n\tfmt.Fprintf(wr, \"\\n\")\n}\n\nfunc min[T constraints.Ordered](a T, b T)\
-    \ T {\n\tif a < b {\n\t\treturn a\n\t}\n\treturn b\n}\n\nfunc max[T constraints.Ordered](a\
-    \ T, b T) T {\n\tif a > b {\n\t\treturn a\n\t}\n\treturn b\n}\n\nfunc abs[T constraints.Integer\
-    \ | constraints.Float](a T) T {\n\tif a >= 0 {\n\t\treturn a\n\t}\n\treturn -a\n\
-    }\n\nfunc lowerBound[T constraints.Ordered](v []T, x T) int {\n\titr := sort.Search(len(v),\
-    \ func(i int) bool {\n\t\treturn v[i] >= x\n\t})\n\treturn itr\n}\n\nfunc upperBound[T\
-    \ constraints.Ordered](v []T, x T) int {\n\titr := sort.Search(len(v), func(i\
-    \ int) bool {\n\t\treturn v[i] > x\n\t})\n\treturn itr\n}\n\nfunc main() {\n\t\
-    sc.Split(bufio.ScanWords)\n\tsc.Buffer([]byte{}, math.MaxInt32)\n\tdefer wr.Flush()\n\
-    \n\tn, m, s := getInt(), getFloat64(), getString()\n\tout(n, m, s)\n\n\tv := getInts(n)\n\
-    \toutArray(v)\n\n\tout(min(\"hello\", \"world\"), max(\"hello\", \"world\"))\n\
-    \tout(abs(-10), abs(10))\n\n\tw := []int{1, 2, 3, 4, 5}\n\tout(lowerBound(w, 3),\
-    \ upperBound(w, 3))\n}\n"
+    RuntimeError: bundler is not specified: algorithm/dijkstra.go\n"
+  code: "package algorithm\n\nimport (\n\t\"errors\"\n\t\"math\"\n\n\t\"golang.org/x/exp/constraints\"\
+    \n)\n\nvar ErrDijkstraOutOfRange = errors.New(\"Dijkstra: index out of range\"\
+    )\n\ntype Dijkstra[T constraints.Ordered] struct {\n\tg   [][]*dijkstraPair[T]\
+    \ // pair of (cost, dest)\n\td   []T\n\tpre []int\n\tinf T\n}\n\ntype dijkstraPair[T\
+    \ any] struct {\n\tfirst  T\n\tsecond int\n}\n\nfunc NewDijkstra[T constraints.Ordered](n\
+    \ int, inf T) *Dijkstra[T] {\n\td := make([]T, n)\n\tpre := make([]int, n)\n\t\
+    for i := 0; i < n; i++ {\n\t\td[i] = inf\n\t\tpre[i] = -1\n\t}\n\treturn &Dijkstra[T]{\n\
+    \t\tg:   make([][]*dijkstraPair[T], n),\n\t\td:   make([]T, n),\n\t\tpre: make([]int,\
+    \ n),\n\t\tinf: inf,\n\t}\n}\n\nfunc NewDefaultDijkstra(n int) *Dijkstra[int]\
+    \ {\n\treturn NewDijkstra(n, math.MaxInt)\n}\n\nfunc (d *Dijkstra[T]) Infinity()\
+    \ T {\n\treturn d.inf\n}\n\nfunc (d *Dijkstra[T]) Order() int {\n\treturn len(d.g)\n\
+    }\n\nfunc (d *Dijkstra[T]) AddEdge(from, to int, cost T) {\n\tif !(0 <= from &&\
+    \ from < d.Order() && 0 <= to && to < d.Order()) {\n\t\tpanic(ErrDijkstraOutOfRange)\n\
+    \t}\n\td.g[from] = append(d.g[from], &dijkstraPair[T]{\n\t\tfirst:  cost,\n\t\t\
+    second: to,\n\t})\n}\n\nfunc (d *Dijkstra[T]) Dijkstra(s int) {\n\tif !(0 <= s\
+    \ && s < d.Order()) {\n\t\tpanic(ErrDijkstraOutOfRange)\n\t}\n\tvar zero T\n\t\
+    for i := 0; i < d.Order(); i++ {\n\t\td.d[i] = d.Infinity()\n\t\td.pre[i] = -1\n\
+    \t}\n\td.d[s] = zero\n\tpq := NewBinaryHeap(func(a, b *dijkstraPair[T]) bool {\n\
+    \t\treturn a.first < b.first\n\t})\n\tpq.Push(&dijkstraPair[T]{\n\t\tfirst:  zero,\
+    \ // dist\n\t\tsecond: s,    // node\n\t})\n\tfor !pq.Empty() {\n\t\tsrc := pq.Pop()\n\
+    \t\tif d.d[src.second] < src.first {\n\t\t\tcontinue\n\t\t}\n\t\tfor _, edge :=\
+    \ range d.g[src.second] {\n\t\t\tif d.d[edge.second] > d.d[src.second]+edge.first\
+    \ {\n\t\t\t\td.d[edge.second] = d.d[src.second] + edge.first\n\t\t\t\td.pre[edge.second]\
+    \ = src.second\n\t\t\t\tpq.Push(&dijkstraPair[T]{\n\t\t\t\t\tfirst:  d.d[edge.second],\n\
+    \t\t\t\t\tsecond: edge.second,\n\t\t\t\t})\n\t\t\t}\n\t\t}\n\t}\n}\n\nfunc (d\
+    \ *Dijkstra[T]) Distance(t int) T {\n\tif !(0 <= t && t < d.Order()) {\n\t\tpanic(ErrDijkstraOutOfRange)\n\
+    \t}\n\treturn d.d[t]\n}\n\nfunc (d *Dijkstra[T]) ShortestPath(t int) []int {\n\
+    \tif !(0 <= t && t < d.Order()) {\n\t\tpanic(ErrDijkstraOutOfRange)\n\t}\n\tvar\
+    \ path []int\n\tif d.Distance(t) == d.Infinity() {\n\t\treturn nil\n\t}\n\tfor\
+    \ t != -1 {\n\t\tpath = append(path, t)\n\t\tt = d.pre[t]\n\t}\n\tfor i := 0;\
+    \ i < len(path)/2; i++ {\n\t\tpath[i], path[len(path)-1-i] = path[len(path)-1-i],\
+    \ path[i]\n\t}\n\treturn path\n}\n"
   dependsOn:
+  - main.go
   - test/aoj-GRL_1_A-dijkstra.test.go
   - test/aoj-ALDS1_3_C-deque.test.go
   - test/aoj-ALDS1_3_B-queue.test.go
@@ -124,16 +133,15 @@ data:
   - test/aoj-ALDS1_3_A-stack.test.go
   - algorithm/deque.go
   - algorithm/union_find.go
-  - algorithm/dijkstra.go
   - algorithm/queue.go
   - algorithm/binary_heap.go
   - algorithm/stack.go
   isVerificationFile: false
-  path: main.go
+  path: algorithm/dijkstra.go
   requiredBy:
+  - main.go
   - algorithm/deque.go
   - algorithm/union_find.go
-  - algorithm/dijkstra.go
   - algorithm/queue.go
   - algorithm/binary_heap.go
   - algorithm/stack.go
@@ -147,10 +155,10 @@ data:
   - test/aoj-ITP1_1_A.test.go
   - test/aoj-DSL_1_A-union_find.test.go
   - test/aoj-ALDS1_3_A-stack.test.go
-documentation_of: main.go
+documentation_of: algorithm/dijkstra.go
 layout: document
 redirect_from:
-- /library/main.go
-- /library/main.go.html
-title: main.go
+- /library/algorithm/dijkstra.go
+- /library/algorithm/dijkstra.go.html
+title: algorithm/dijkstra.go
 ---

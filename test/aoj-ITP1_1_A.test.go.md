@@ -2,49 +2,85 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: algorithm/deque/aoj-ALDS1_3_C.test.go
-    title: algorithm/deque/aoj-ALDS1_3_C.test.go
+    path: algorithm/binary_heap.go
+    title: algorithm/binary_heap.go
   - icon: ':heavy_check_mark:'
-    path: algorithm/deque/deque.go
-    title: algorithm/deque/deque.go
+    path: algorithm/deque.go
+    title: algorithm/deque.go
   - icon: ':heavy_check_mark:'
-    path: algorithm/queue/aoj-ALDS1_3_B.test.go
-    title: algorithm/queue/aoj-ALDS1_3_B.test.go
+    path: algorithm/dijkstra.go
+    title: algorithm/dijkstra.go
   - icon: ':heavy_check_mark:'
-    path: algorithm/queue/queue.go
-    title: algorithm/queue/queue.go
+    path: algorithm/queue.go
+    title: algorithm/queue.go
   - icon: ':heavy_check_mark:'
-    path: algorithm/stack/aoj-ALDS1_3_A.test.go
-    title: algorithm/stack/aoj-ALDS1_3_A.test.go
+    path: algorithm/stack.go
+    title: algorithm/stack.go
   - icon: ':heavy_check_mark:'
-    path: algorithm/stack/stack.go
-    title: algorithm/stack/stack.go
+    path: algorithm/union_find.go
+    title: algorithm/union_find.go
   - icon: ':heavy_check_mark:'
     path: main.go
     title: main.go
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-ALDS1_3_A-stack.test.go
+    title: test/aoj-ALDS1_3_A-stack.test.go
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-ALDS1_3_B-queue.test.go
+    title: test/aoj-ALDS1_3_B-queue.test.go
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-ALDS1_3_C-deque.test.go
+    title: test/aoj-ALDS1_3_C-deque.test.go
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-ALDS1_9_C-binary_haep.test.go
+    title: test/aoj-ALDS1_9_C-binary_haep.test.go
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-DSL_1_A-union_find.test.go
+    title: test/aoj-DSL_1_A-union_find.test.go
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-GRL_1_A-dijkstra.test.go
+    title: test/aoj-GRL_1_A-dijkstra.test.go
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
-    path: algorithm/deque/deque.go
-    title: algorithm/deque/deque.go
+    path: algorithm/binary_heap.go
+    title: algorithm/binary_heap.go
   - icon: ':heavy_check_mark:'
-    path: algorithm/queue/queue.go
-    title: algorithm/queue/queue.go
+    path: algorithm/deque.go
+    title: algorithm/deque.go
   - icon: ':heavy_check_mark:'
-    path: algorithm/stack/stack.go
-    title: algorithm/stack/stack.go
+    path: algorithm/dijkstra.go
+    title: algorithm/dijkstra.go
+  - icon: ':heavy_check_mark:'
+    path: algorithm/queue.go
+    title: algorithm/queue.go
+  - icon: ':heavy_check_mark:'
+    path: algorithm/stack.go
+    title: algorithm/stack.go
+  - icon: ':heavy_check_mark:'
+    path: algorithm/union_find.go
+    title: algorithm/union_find.go
   - icon: ':heavy_check_mark:'
     path: main.go
     title: main.go
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: algorithm/deque/aoj-ALDS1_3_C.test.go
-    title: algorithm/deque/aoj-ALDS1_3_C.test.go
+    path: test/aoj-ALDS1_3_A-stack.test.go
+    title: test/aoj-ALDS1_3_A-stack.test.go
   - icon: ':heavy_check_mark:'
-    path: algorithm/queue/aoj-ALDS1_3_B.test.go
-    title: algorithm/queue/aoj-ALDS1_3_B.test.go
+    path: test/aoj-ALDS1_3_B-queue.test.go
+    title: test/aoj-ALDS1_3_B-queue.test.go
   - icon: ':heavy_check_mark:'
-    path: algorithm/stack/aoj-ALDS1_3_A.test.go
-    title: algorithm/stack/aoj-ALDS1_3_A.test.go
+    path: test/aoj-ALDS1_3_C-deque.test.go
+    title: test/aoj-ALDS1_3_C-deque.test.go
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-ALDS1_9_C-binary_haep.test.go
+    title: test/aoj-ALDS1_9_C-binary_haep.test.go
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-DSL_1_A-union_find.test.go
+    title: test/aoj-DSL_1_A-union_find.test.go
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-GRL_1_A-dijkstra.test.go
+    title: test/aoj-GRL_1_A-dijkstra.test.go
   _isVerificationFailed: false
   _pathExtension: go
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -60,25 +96,37 @@ data:
     )\n}\n"
   dependsOn:
   - main.go
-  - algorithm/stack/aoj-ALDS1_3_A.test.go
-  - algorithm/stack/stack.go
-  - algorithm/queue/aoj-ALDS1_3_B.test.go
-  - algorithm/queue/queue.go
-  - algorithm/deque/deque.go
-  - algorithm/deque/aoj-ALDS1_3_C.test.go
+  - test/aoj-GRL_1_A-dijkstra.test.go
+  - test/aoj-ALDS1_3_C-deque.test.go
+  - test/aoj-ALDS1_3_B-queue.test.go
+  - test/aoj-ALDS1_9_C-binary_haep.test.go
+  - test/aoj-DSL_1_A-union_find.test.go
+  - test/aoj-ALDS1_3_A-stack.test.go
+  - algorithm/deque.go
+  - algorithm/union_find.go
+  - algorithm/dijkstra.go
+  - algorithm/queue.go
+  - algorithm/binary_heap.go
+  - algorithm/stack.go
   isVerificationFile: true
   path: test/aoj-ITP1_1_A.test.go
   requiredBy:
   - main.go
-  - algorithm/stack/stack.go
-  - algorithm/queue/queue.go
-  - algorithm/deque/deque.go
-  timestamp: '2024-08-24 17:41:38+09:00'
+  - algorithm/deque.go
+  - algorithm/union_find.go
+  - algorithm/dijkstra.go
+  - algorithm/queue.go
+  - algorithm/binary_heap.go
+  - algorithm/stack.go
+  timestamp: '2024-08-25 00:57:10+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith:
-  - algorithm/stack/aoj-ALDS1_3_A.test.go
-  - algorithm/queue/aoj-ALDS1_3_B.test.go
-  - algorithm/deque/aoj-ALDS1_3_C.test.go
+  - test/aoj-GRL_1_A-dijkstra.test.go
+  - test/aoj-ALDS1_3_C-deque.test.go
+  - test/aoj-ALDS1_3_B-queue.test.go
+  - test/aoj-ALDS1_9_C-binary_haep.test.go
+  - test/aoj-DSL_1_A-union_find.test.go
+  - test/aoj-ALDS1_3_A-stack.test.go
 documentation_of: test/aoj-ITP1_1_A.test.go
 layout: document
 redirect_from:
