@@ -1,15 +1,15 @@
-package algorithm
+package stack
 
 import "errors"
 
 var ErrStackEmpty = errors.New("Stack: stack is empty")
 
 type Stack[T any] struct {
-	data []T
+	Data []T
 }
 
 func NewStack[T any]() *Stack[T] {
-	return &Stack[T]{data: []T{}}
+	return &Stack[T]{Data: []T{}}
 }
 
 func (s *Stack[T]) Empty() bool {
@@ -17,23 +17,23 @@ func (s *Stack[T]) Empty() bool {
 }
 
 func (s *Stack[T]) Size() int {
-	return len(s.data)
+	return len(s.Data)
 }
 
 func (s *Stack[T]) Top() T {
 	if s.Empty() {
 		panic(ErrStackEmpty)
 	}
-	return s.data[len(s.data)-1]
+	return s.Data[len(s.Data)-1]
 }
 
 func (s *Stack[T]) Push(x T) {
-	s.data = append(s.data, x)
+	s.Data = append(s.Data, x)
 }
 
 func (s *Stack[T]) PushRange(v []T) {
 	for i := 0; i < len(v); i++ {
-		s.data = append(s.data, v[i])
+		s.Data = append(s.Data, v[i])
 	}
 }
 
@@ -41,7 +41,7 @@ func (s *Stack[T]) Pop() T {
 	if s.Empty() {
 		panic(ErrStackEmpty)
 	}
-	res := s.data[len(s.data)-1]
-	s.data = s.data[:len(s.data)-1]
+	res := s.Data[len(s.Data)-1]
+	s.Data = s.Data[:len(s.Data)-1]
 	return res
 }
