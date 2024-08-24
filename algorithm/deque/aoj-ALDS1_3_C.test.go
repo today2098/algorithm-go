@@ -6,7 +6,6 @@ package main
 
 import (
 	"bufio"
-	"container/list"
 	"fmt"
 	"math"
 	"os"
@@ -50,29 +49,23 @@ func main() {
 	n := getInt()
 
 	dq := deque.NewDeque[int]()
-	mp := map[int]*list.Element{}
 	for i := 0; i < n; i++ {
 		cmd := getString()
 
 		if cmd == "insert" {
 			x := getInt()
+
 			dq.PushFront(x)
-			mp[x] = dq.Data.Front()
 		} else if cmd == "delete" {
 			x := getInt()
 
-			node := mp[x]
-			if node == nil {
-				continue
+			node := dq.Data.Front()
+			for node != nil && node.Value.(int) != x {
+				node = node.Next()
 			}
-
-			tmp := node.Next()
-			for tmp != nil && tmp.Value.(int) != x {
-				tmp = tmp.Next()
+			if node != nil {
+				dq.Data.Remove(node)
 			}
-			mp[x] = tmp
-
-			dq.Data.Remove(node)
 		} else if cmd == "deleteFirst" {
 			dq.PopFront()
 		} else {
