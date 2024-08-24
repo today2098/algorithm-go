@@ -9,8 +9,8 @@ import (
 
 var ErrDijkstraOutOfRange = errors.New("Dijkstra: index out of range")
 
-type Dijkstra[T constraints.Ordered] struct {
-	g   [][]*dijkstraPair[T] // pair of (cost, dest)
+type Dijkstra[T constraints.Integer | constraints.Float] struct {
+	g   [][]*dijkstraPair[T] // pair of (cost, to)
 	d   []T
 	pre []int
 	inf T
@@ -21,7 +21,7 @@ type dijkstraPair[T any] struct {
 	second int
 }
 
-func NewDijkstra[T constraints.Ordered](n int, inf T) *Dijkstra[T] {
+func NewDijkstra[T constraints.Integer | constraints.Float](n int, inf T) *Dijkstra[T] {
 	d := make([]T, n)
 	pre := make([]int, n)
 	for i := 0; i < n; i++ {
@@ -30,8 +30,8 @@ func NewDijkstra[T constraints.Ordered](n int, inf T) *Dijkstra[T] {
 	}
 	return &Dijkstra[T]{
 		g:   make([][]*dijkstraPair[T], n),
-		d:   make([]T, n),
-		pre: make([]int, n),
+		d:   d,
+		pre: pre,
 		inf: inf,
 	}
 }
@@ -62,18 +62,17 @@ func (d *Dijkstra[T]) Dijkstra(s int) {
 	if !(0 <= s && s < d.Order()) {
 		panic(ErrDijkstraOutOfRange)
 	}
-	var zero T
 	for i := 0; i < d.Order(); i++ {
 		d.d[i] = d.Infinity()
 		d.pre[i] = -1
 	}
-	d.d[s] = zero
+	d.d[s] = 0
 	pq := NewBinaryHeap(func(a, b *dijkstraPair[T]) bool {
 		return a.first < b.first
 	})
 	pq.Push(&dijkstraPair[T]{
-		first:  zero, // dist
-		second: s,    // node
+		first:  0, // dist
+		second: s, // node
 	})
 	for !pq.Empty() {
 		src := pq.Pop()
@@ -106,7 +105,7 @@ func (d *Dijkstra[T]) ShortestPath(t int) []int {
 	}
 	var path []int
 	if d.Distance(t) == d.Infinity() {
-		return nil
+		return path
 	}
 	for t != -1 {
 		path = append(path, t)
