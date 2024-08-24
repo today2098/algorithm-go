@@ -17,7 +17,7 @@
 	// }
 	"Deque": {
 		"scope": "go",
-		"prefix": "go",
+		"prefix": "deque",
 		"body": [
 			"var ErrDequeEmpty = errors.New(\"Deque: deque is empty\")",
 			"",
