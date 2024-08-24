@@ -1,7 +1,25 @@
 ---
 data:
-  _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedDependsOn:
+  - icon: ':warning:'
+    path: algorithm/deque.go
+    title: algorithm/deque.go
+  - icon: ':warning:'
+    path: algorithm/queue.go
+    title: algorithm/queue.go
+  - icon: ':warning:'
+    path: algorithm/stack.go
+    title: algorithm/stack.go
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: algorithm/deque.go
+    title: algorithm/deque.go
+  - icon: ':warning:'
+    path: algorithm/queue.go
+    title: algorithm/queue.go
+  - icon: ':warning:'
+    path: algorithm/stack.go
+    title: algorithm/stack.go
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: go
@@ -12,13 +30,32 @@ data:
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/home/runner/.local/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
     RuntimeError: bundler is not specified: main.go\n"
-  code: "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tfmt.Println(\"Hello, world!\"\
-    )\n}\n"
-  dependsOn: []
+  code: "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"math\"\n\t\"os\"\n\t\
+    \"strconv\"\n)\n\nvar sc = bufio.NewScanner(os.Stdin)\nvar wr = bufio.NewWriter(os.Stdout)\n\
+    \nfunc getInt() int {\n\tsc.Scan()\n\telem, err := strconv.Atoi(sc.Text())\n\t\
+    if err != nil {\n\t\tpanic(err)\n\t}\n\treturn elem\n}\n\nfunc getFloat64() float64\
+    \ {\n\tsc.Scan()\n\telem, err := strconv.ParseFloat(sc.Text(), 64)\n\tif err !=\
+    \ nil {\n\t\tpanic(err)\n\t}\n\treturn elem\n}\n\nfunc getString() string {\n\t\
+    sc.Scan()\n\treturn sc.Text()\n}\n\nfunc getInts(n int) []int {\n\tv := make([]int,\
+    \ n)\n\tfor i := 0; i < n; i++ {\n\t\tv[i] = getInt()\n\t}\n\treturn v\n}\n\n\
+    func out(x ...any) {\n\tfmt.Fprintln(wr, x...)\n}\n\nfunc outArray[T any](arr\
+    \ []T) {\n\tfor i := 0; i < len(arr)-1; i++ {\n\t\tfmt.Fprintf(wr, \"%v \", arr[i])\n\
+    \t}\n\tif len(arr) > 0 {\n\t\tfmt.Fprintf(wr, \"%v\", arr[len(arr)-1])\n\t}\n\t\
+    fmt.Fprintf(wr, \"\\n\")\n}\n\nfunc main() {\n\tsc.Split(bufio.ScanWords)\n\t\
+    sc.Buffer([]byte{}, math.MaxInt32)\n\tdefer wr.Flush()\n\n\tn, m, s := getInt(),\
+    \ getFloat64(), getString()\n\tout(n, m, s)\n\n\tv := getInts(n)\n\toutArray(v)\n\
+    }\n"
+  dependsOn:
+  - algorithm/deque.go
+  - algorithm/queue.go
+  - algorithm/stack.go
   isVerificationFile: false
   path: main.go
-  requiredBy: []
-  timestamp: '2024-08-24 13:28:00+09:00'
+  requiredBy:
+  - algorithm/deque.go
+  - algorithm/queue.go
+  - algorithm/stack.go
+  timestamp: '2024-08-24 13:59:30+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: main.go
