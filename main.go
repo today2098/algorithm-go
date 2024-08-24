@@ -59,20 +59,25 @@ func outArray[T any](arr []T) {
 	fmt.Fprintf(wr, "\n")
 }
 
-func chmin[T constraints.Ordered](a *T, b T) bool {
-	if *a > b {
-		*a = b
-		return true
+func min[T constraints.Ordered](a T, b T) T {
+	if a < b {
+		return a
 	}
-	return false
+	return b
 }
 
-func chmax[T constraints.Ordered](a *T, b T) bool {
-	if *a < b {
-		*a = b
-		return true
+func max[T constraints.Ordered](a T, b T) T {
+	if a > b {
+		return a
 	}
-	return false
+	return b
+}
+
+func abs[T constraints.Integer | constraints.Float](a T) T {
+	if a >= 0 {
+		return a
+	}
+	return -a
 }
 
 func lowerBound[T constraints.Ordered](v []T, x T) int {
@@ -100,10 +105,8 @@ func main() {
 	v := getInts(n)
 	outArray(v)
 
-	a, b, c := 0, 1, -1
-	chmin(&b, a)
-	chmax(&c, a)
-	out(a, b, c)
+	out(min("hello", "world"), max("hello", "world"))
+	out(abs(-10), abs(10))
 
 	w := []int{1, 2, 3, 4, 5}
 	out(lowerBound(w, 3), upperBound(w, 3))
