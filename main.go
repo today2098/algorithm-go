@@ -5,7 +5,10 @@ import (
 	"fmt"
 	"math"
 	"os"
+	"sort"
 	"strconv"
+
+	"golang.org/x/exp/constraints"
 )
 
 var sc = bufio.NewScanner(os.Stdin)
@@ -56,6 +59,41 @@ func outArray[T any](arr []T) {
 	fmt.Fprintf(wr, "\n")
 }
 
+func min[T constraints.Ordered](a T, b T) T {
+	if a < b {
+		return a
+	}
+	return b
+}
+
+func max[T constraints.Ordered](a T, b T) T {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+func abs[T constraints.Integer | constraints.Float](a T) T {
+	if a >= 0 {
+		return a
+	}
+	return -a
+}
+
+func lowerBound[T constraints.Ordered](v []T, x T) int {
+	itr := sort.Search(len(v), func(i int) bool {
+		return v[i] >= x
+	})
+	return itr
+}
+
+func upperBound[T constraints.Ordered](v []T, x T) int {
+	itr := sort.Search(len(v), func(i int) bool {
+		return v[i] > x
+	})
+	return itr
+}
+
 func main() {
 	sc.Split(bufio.ScanWords)
 	sc.Buffer([]byte{}, math.MaxInt32)
@@ -66,4 +104,10 @@ func main() {
 
 	v := getInts(n)
 	outArray(v)
+
+	out(min("hello", "world"), max("hello", "world"))
+	out(abs(-10), abs(10))
+
+	w := []int{1, 2, 3, 4, 5}
+	out(lowerBound(w, 3), upperBound(w, 3))
 }

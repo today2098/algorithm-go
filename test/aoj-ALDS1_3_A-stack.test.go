@@ -12,7 +12,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/today2098/algorithm-go/algorithm/stack"
+	"github.com/today2098/algorithm-go/algorithm"
 )
 
 var sc = bufio.NewScanner(os.Stdin)
@@ -30,7 +30,7 @@ func main() {
 	sc.Scan()
 	query := strings.Split(sc.Text(), " ")
 
-	st := stack.NewStack[int]()
+	st := algorithm.NewStack[int]()
 	for _, elem := range query {
 		num, err := strconv.Atoi(elem)
 		if err == nil {
