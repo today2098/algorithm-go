@@ -1,4 +1,4 @@
-package algorithm
+package deque
 
 import (
 	"container/list"
