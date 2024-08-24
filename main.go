@@ -102,6 +102,34 @@ func abs[T constraints.Integer | constraints.Float](a T) T {
 	return -a
 }
 
+func minElement[T constraints.Ordered](v []T) int {
+	itr := 0
+	if len(v) == 0 {
+		return itr
+	}
+	mn := v[0]
+	for i := 1; i < len(v); i++ {
+		if chmin(&mn, v[i]) {
+			itr = i
+		}
+	}
+	return itr
+}
+
+func maxElement[T constraints.Ordered](v []T) int {
+	itr := 0
+	if len(v) == 0 {
+		return itr
+	}
+	mx := v[0]
+	for i := 1; i < len(v); i++ {
+		if chmax(&mx, v[i]) {
+			itr = i
+		}
+	}
+	return itr
+}
+
 func lowerBound[T constraints.Ordered](v []T, x T) int {
 	itr := sort.Search(len(v), func(i int) bool {
 		return v[i] >= x
@@ -138,6 +166,9 @@ func main() {
 	chmax(&c, a)
 	out(a, b, c)
 
-	w := []int{1, 2, 3, 4, 5}
-	out(lowerBound(w, 3), upperBound(w, 3))
+	w := []int{3, 1, 4, 2, 5}
+	out(w, minElement(w), maxElement(w))
+
+	sort.Ints(w)
+	out(w, lowerBound(w, 3), upperBound(w, 3))
 }
