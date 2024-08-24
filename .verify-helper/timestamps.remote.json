@@ -1,6 +1,9 @@
 {
-"algorithm/deque/aoj-ALDS1_3_C.test.go": "2024-08-24 17:41:38 +0900",
-"algorithm/queue/aoj-ALDS1_3_B.test.go": "2024-08-24 17:41:38 +0900",
-"algorithm/stack/aoj-ALDS1_3_A.test.go": "2024-08-24 17:41:38 +0900",
-"test/aoj-ITP1_1_A.test.go": "2024-08-24 17:41:38 +0900"
+"test/aoj-ALDS1_3_A-stack.test.go": "2024-08-25 00:57:10 +0900",
+"test/aoj-ALDS1_3_B-queue.test.go": "2024-08-25 00:57:10 +0900",
+"test/aoj-ALDS1_3_C-deque.test.go": "2024-08-25 00:57:10 +0900",
+"test/aoj-ALDS1_9_C-binary_haep.test.go": "2024-08-25 00:57:10 +0900",
+"test/aoj-DSL_1_A-union_find.test.go": "2024-08-25 00:57:10 +0900",
+"test/aoj-GRL_1_A-dijkstra.test.go": "2024-08-25 00:57:10 +0900",
+"test/aoj-ITP1_1_A.test.go": "2024-08-25 00:57:10 +0900"
 }
