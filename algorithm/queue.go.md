@@ -1,29 +1,35 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: algorithm/deque.go
     title: algorithm/deque.go
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: algorithm/stack.go
     title: algorithm/stack.go
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: main.go
     title: main.go
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-ITP1_1_A.test.go
+    title: test/aoj-ITP1_1_A.test.go
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: algorithm/deque.go
     title: algorithm/deque.go
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: algorithm/stack.go
     title: algorithm/stack.go
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: main.go
     title: main.go
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-ITP1_1_A.test.go
+    title: test/aoj-ITP1_1_A.test.go
   _isVerificationFailed: false
   _pathExtension: go
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes: {}
   bundledCode: "Traceback (most recent call last):\n  File \"/home/runner/.local/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
@@ -42,6 +48,7 @@ data:
     \t}\n\tres := q.data[0]\n\tq.data = q.data[1:]\n\treturn res\n}\n"
   dependsOn:
   - main.go
+  - test/aoj-ITP1_1_A.test.go
   - algorithm/deque.go
   - algorithm/stack.go
   isVerificationFile: false
@@ -50,9 +57,10 @@ data:
   - main.go
   - algorithm/deque.go
   - algorithm/stack.go
-  timestamp: '2024-08-24 13:59:30+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2024-08-24 14:32:30+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/aoj-ITP1_1_A.test.go
 documentation_of: algorithm/queue.go
 layout: document
 redirect_from:
