@@ -1,3 +1,3 @@
 module github.com/today2098/algorithm-go
 
-go 1.22.6
+go 1.23
