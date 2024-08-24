@@ -73,6 +73,22 @@ func max[T constraints.Ordered](a T, b T) T {
 	return b
 }
 
+func chmin[T constraints.Ordered](a *T, b T) bool {
+	if *a > b {
+		*a = b
+		return true
+	}
+	return false
+}
+
+func chmax[T constraints.Ordered](a *T, b T) bool {
+	if *a < b {
+		*a = b
+		return true
+	}
+	return false
+}
+
 func abs[T constraints.Integer | constraints.Float](a T) T {
 	if a >= 0 {
 		return a
@@ -107,6 +123,11 @@ func main() {
 
 	out(min("hello", "world"), max("hello", "world"))
 	out(abs(-10), abs(10))
+
+	a, b, c := 0, 1, -1
+	chmin(&b, a)
+	chmax(&c, a)
+	out(a, b, c)
 
 	w := []int{1, 2, 3, 4, 5}
 	out(lowerBound(w, 3), upperBound(w, 3))
