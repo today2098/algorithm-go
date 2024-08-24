@@ -21,6 +21,25 @@
 				"kind": "build",
 				"isDefault": true
 			}
+		},
+		{
+			"label": "Go: build active file for debug",
+			"type": "shell",
+			"command": "go",
+			"args": [
+				"build",
+				"-gcflags=all='-N -l'",
+				"-o",
+				"${workspaceFolder}/debug.out",
+				"${file}"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$go"
+			],
+			"group": "build",
 		}
 	]
 }

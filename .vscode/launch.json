@@ -8,8 +8,10 @@
             "name": "Launch",
             "type": "go",
             "request": "launch",
-            "mode": "auto",
-            "program": "${fileDirname}"
+            "mode": "exec",
+            "program": "${workspaceFolder}/debug.out",
+            "console": "integratedTerminal",
+            "preLaunchTask": "Go: build active file for debug"
         }
     ]
 }
