@@ -11,7 +11,7 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/today2098/algorithm-go/algorithm/deque"
+	"github.com/today2098/algorithm-go/algorithm"
 )
 
 var sc = bufio.NewScanner(os.Stdin)
@@ -48,7 +48,7 @@ func main() {
 
 	n := getInt()
 
-	dq := deque.NewDeque[int]()
+	dq := algorithm.NewDeque[int]()
 	for i := 0; i < n; i++ {
 		cmd := getString()
 

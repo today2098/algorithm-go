@@ -11,7 +11,7 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/today2098/algorithm-go/algorithm/queue"
+	"github.com/today2098/algorithm-go/algorithm"
 )
 
 var sc = bufio.NewScanner(os.Stdin)
@@ -46,7 +46,7 @@ func main() {
 		name string
 		time int
 	}
-	que := queue.NewQueue[*task]()
+	que := algorithm.NewQueue[*task]()
 	for i := 0; i < n; i++ {
 		t := &task{}
 		t.name, t.time = getString(), getInt()
