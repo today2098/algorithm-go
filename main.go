@@ -45,6 +45,14 @@ func getInts(n int) []int {
 	return v
 }
 
+func getStrings(n int) []string {
+	vs := make([]string, n)
+	for i := 0; i < n; i++ {
+		vs[i] = getString()
+	}
+	return vs
+}
+
 func out(x ...any) {
 	fmt.Fprintln(wr, x...)
 }
@@ -152,8 +160,9 @@ func main() {
 	n, m, s := getInt(), getFloat64(), getString()
 	out(n, m, s)
 
-	v := getInts(n)
+	v, vs := getInts(n), getStrings(n)
 	outArray(v)
+	outArray(vs)
 
 	fill(v, -1)
 	outArray(v)
