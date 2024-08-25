@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
+    path: algorithm/bellman_ford.go
+    title: algorithm/bellman_ford.go
+  - icon: ':heavy_check_mark:'
     path: algorithm/binary_heap.go
     title: algorithm/binary_heap.go
   - icon: ':heavy_check_mark:'
@@ -38,9 +41,15 @@ data:
     path: test/aoj-GRL_1_A-dijkstra.test.go
     title: test/aoj-GRL_1_A-dijkstra.test.go
   - icon: ':heavy_check_mark:'
+    path: test/aoj-GRL_1_B-bellman_ford.test.go
+    title: test/aoj-GRL_1_B-bellman_ford.test.go
+  - icon: ':heavy_check_mark:'
     path: test/aoj-ITP1_1_A.test.go
     title: test/aoj-ITP1_1_A.test.go
   _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: algorithm/bellman_ford.go
+    title: algorithm/bellman_ford.go
   - icon: ':heavy_check_mark:'
     path: algorithm/binary_heap.go
     title: algorithm/binary_heap.go
@@ -79,6 +88,9 @@ data:
     path: test/aoj-GRL_1_A-dijkstra.test.go
     title: test/aoj-GRL_1_A-dijkstra.test.go
   - icon: ':heavy_check_mark:'
+    path: test/aoj-GRL_1_B-bellman_ford.test.go
+    title: test/aoj-GRL_1_B-bellman_ford.test.go
+  - icon: ':heavy_check_mark:'
     path: test/aoj-ITP1_1_A.test.go
     title: test/aoj-ITP1_1_A.test.go
   _isVerificationFailed: false
@@ -98,30 +110,47 @@ data:
     \ 64)\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\treturn elem\n}\n\nfunc getString()\
     \ string {\n\tsc.Scan()\n\treturn sc.Text()\n}\n\nfunc getInts(n int) []int {\n\
     \tv := make([]int, n)\n\tfor i := 0; i < n; i++ {\n\t\tv[i] = getInt()\n\t}\n\t\
-    return v\n}\n\nfunc out(x ...any) {\n\tfmt.Fprintln(wr, x...)\n}\n\nfunc outArray[T\
-    \ any](arr []T) {\n\tfor i := 0; i < len(arr)-1; i++ {\n\t\tfmt.Fprintf(wr, \"\
-    %v \", arr[i])\n\t}\n\tif len(arr) > 0 {\n\t\tfmt.Fprintf(wr, \"%v\", arr[len(arr)-1])\n\
-    \t}\n\tfmt.Fprintf(wr, \"\\n\")\n}\n\nfunc min[T constraints.Ordered](a T, b T)\
-    \ T {\n\tif a < b {\n\t\treturn a\n\t}\n\treturn b\n}\n\nfunc max[T constraints.Ordered](a\
-    \ T, b T) T {\n\tif a > b {\n\t\treturn a\n\t}\n\treturn b\n}\n\nfunc abs[T constraints.Integer\
-    \ | constraints.Float](a T) T {\n\tif a >= 0 {\n\t\treturn a\n\t}\n\treturn -a\n\
-    }\n\nfunc lowerBound[T constraints.Ordered](v []T, x T) int {\n\titr := sort.Search(len(v),\
-    \ func(i int) bool {\n\t\treturn v[i] >= x\n\t})\n\treturn itr\n}\n\nfunc upperBound[T\
-    \ constraints.Ordered](v []T, x T) int {\n\titr := sort.Search(len(v), func(i\
-    \ int) bool {\n\t\treturn v[i] > x\n\t})\n\treturn itr\n}\n\nfunc main() {\n\t\
-    sc.Split(bufio.ScanWords)\n\tsc.Buffer([]byte{}, math.MaxInt32)\n\tdefer wr.Flush()\n\
-    \n\tn, m, s := getInt(), getFloat64(), getString()\n\tout(n, m, s)\n\n\tv := getInts(n)\n\
-    \toutArray(v)\n\n\tout(min(\"hello\", \"world\"), max(\"hello\", \"world\"))\n\
-    \tout(abs(-10), abs(10))\n\n\tw := []int{1, 2, 3, 4, 5}\n\tout(lowerBound(w, 3),\
+    return v\n}\n\nfunc getStrings(n int) []string {\n\tvs := make([]string, n)\n\t\
+    for i := 0; i < n; i++ {\n\t\tvs[i] = getString()\n\t}\n\treturn vs\n}\n\nfunc\
+    \ out(x ...any) {\n\tfmt.Fprintln(wr, x...)\n}\n\nfunc outArray[T any](arr []T)\
+    \ {\n\tfor i := 0; i < len(arr)-1; i++ {\n\t\tfmt.Fprintf(wr, \"%v \", arr[i])\n\
+    \t}\n\tif len(arr) > 0 {\n\t\tfmt.Fprintf(wr, \"%v\", arr[len(arr)-1])\n\t}\n\t\
+    fmt.Fprintf(wr, \"\\n\")\n}\n\nfunc fill[T any](v []T, x T) {\n\tfor i := 0; i\
+    \ < len(v); i++ {\n\t\tv[i] = x\n\t}\n}\n\nfunc min[T constraints.Ordered](a T,\
+    \ b T) T {\n\tif a < b {\n\t\treturn a\n\t}\n\treturn b\n}\n\nfunc max[T constraints.Ordered](a\
+    \ T, b T) T {\n\tif a > b {\n\t\treturn a\n\t}\n\treturn b\n}\n\nfunc chmin[T\
+    \ constraints.Ordered](a *T, b T) bool {\n\tif *a > b {\n\t\t*a = b\n\t\treturn\
+    \ true\n\t}\n\treturn false\n}\n\nfunc chmax[T constraints.Ordered](a *T, b T)\
+    \ bool {\n\tif *a < b {\n\t\t*a = b\n\t\treturn true\n\t}\n\treturn false\n}\n\
+    \nfunc abs[T constraints.Integer | constraints.Float](a T) T {\n\tif a >= 0 {\n\
+    \t\treturn a\n\t}\n\treturn -a\n}\n\nfunc minElement[T constraints.Ordered](v\
+    \ []T) int {\n\titr := 0\n\tif len(v) == 0 {\n\t\treturn itr\n\t}\n\tmn := v[0]\n\
+    \tfor i := 1; i < len(v); i++ {\n\t\tif chmin(&mn, v[i]) {\n\t\t\titr = i\n\t\t\
+    }\n\t}\n\treturn itr\n}\n\nfunc maxElement[T constraints.Ordered](v []T) int {\n\
+    \titr := 0\n\tif len(v) == 0 {\n\t\treturn itr\n\t}\n\tmx := v[0]\n\tfor i :=\
+    \ 1; i < len(v); i++ {\n\t\tif chmax(&mx, v[i]) {\n\t\t\titr = i\n\t\t}\n\t}\n\
+    \treturn itr\n}\n\nfunc lowerBound[T constraints.Ordered](v []T, x T) int {\n\t\
+    itr := sort.Search(len(v), func(i int) bool {\n\t\treturn v[i] >= x\n\t})\n\t\
+    return itr\n}\n\nfunc upperBound[T constraints.Ordered](v []T, x T) int {\n\t\
+    itr := sort.Search(len(v), func(i int) bool {\n\t\treturn v[i] > x\n\t})\n\treturn\
+    \ itr\n}\n\nfunc main() {\n\tsc.Split(bufio.ScanWords)\n\tsc.Buffer([]byte{},\
+    \ math.MaxInt32)\n\tdefer wr.Flush()\n\n\tn, m, s := getInt(), getFloat64(), getString()\n\
+    \tout(n, m, s)\n\n\tv, vs := getInts(n), getStrings(n)\n\toutArray(v)\n\toutArray(vs)\n\
+    \n\tfill(v, -1)\n\toutArray(v)\n\n\tout(min(\"hello\", \"world\"), max(\"hello\"\
+    , \"world\"))\n\tout(abs(-10), abs(10))\n\n\ta, b, c := 0, 1, -1\n\tchmin(&b,\
+    \ a)\n\tchmax(&c, a)\n\tout(a, b, c)\n\n\tw := []int{3, 1, 4, 2, 5}\n\tout(w,\
+    \ minElement(w), maxElement(w))\n\n\tsort.Ints(w)\n\tout(w, lowerBound(w, 3),\
     \ upperBound(w, 3))\n}\n"
   dependsOn:
   - test/aoj-GRL_1_A-dijkstra.test.go
   - test/aoj-ALDS1_3_C-deque.test.go
   - test/aoj-ALDS1_3_B-queue.test.go
   - test/aoj-ALDS1_9_C-binary_haep.test.go
+  - test/aoj-GRL_1_B-bellman_ford.test.go
   - test/aoj-ITP1_1_A.test.go
   - test/aoj-DSL_1_A-union_find.test.go
   - test/aoj-ALDS1_3_A-stack.test.go
+  - algorithm/bellman_ford.go
   - algorithm/deque.go
   - algorithm/union_find.go
   - algorithm/dijkstra.go
@@ -131,19 +160,21 @@ data:
   isVerificationFile: false
   path: main.go
   requiredBy:
+  - algorithm/bellman_ford.go
   - algorithm/deque.go
   - algorithm/union_find.go
   - algorithm/dijkstra.go
   - algorithm/queue.go
   - algorithm/binary_heap.go
   - algorithm/stack.go
-  timestamp: '2024-08-25 00:57:10+09:00'
+  timestamp: '2024-08-25 05:23:23+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj-GRL_1_A-dijkstra.test.go
   - test/aoj-ALDS1_3_C-deque.test.go
   - test/aoj-ALDS1_3_B-queue.test.go
   - test/aoj-ALDS1_9_C-binary_haep.test.go
+  - test/aoj-GRL_1_B-bellman_ford.test.go
   - test/aoj-ITP1_1_A.test.go
   - test/aoj-DSL_1_A-union_find.test.go
   - test/aoj-ALDS1_3_A-stack.test.go

@@ -4,6 +4,9 @@ data:
   - name: algorithm
     pages:
     - icon: ':heavy_check_mark:'
+      path: algorithm/bellman_ford.go
+      title: algorithm/bellman_ford.go
+    - icon: ':heavy_check_mark:'
       path: algorithm/binary_heap.go
       title: algorithm/binary_heap.go
     - icon: ':heavy_check_mark:'
@@ -47,6 +50,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj-GRL_1_A-dijkstra.test.go
       title: test/aoj-GRL_1_A-dijkstra.test.go
+    - icon: ':heavy_check_mark:'
+      path: test/aoj-GRL_1_B-bellman_ford.test.go
+      title: test/aoj-GRL_1_B-bellman_ford.test.go
     - icon: ':heavy_check_mark:'
       path: test/aoj-ITP1_1_A.test.go
       title: test/aoj-ITP1_1_A.test.go

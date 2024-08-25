@@ -2,6 +2,9 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
+    path: algorithm/bellman_ford.go
+    title: algorithm/bellman_ford.go
+  - icon: ':heavy_check_mark:'
     path: algorithm/binary_heap.go
     title: algorithm/binary_heap.go
   - icon: ':heavy_check_mark:'
@@ -40,7 +43,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj-GRL_1_A-dijkstra.test.go
     title: test/aoj-GRL_1_A-dijkstra.test.go
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-GRL_1_B-bellman_ford.test.go
+    title: test/aoj-GRL_1_B-bellman_ford.test.go
   _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: algorithm/bellman_ford.go
+    title: algorithm/bellman_ford.go
   - icon: ':heavy_check_mark:'
     path: algorithm/binary_heap.go
     title: algorithm/binary_heap.go
@@ -81,6 +90,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj-GRL_1_A-dijkstra.test.go
     title: test/aoj-GRL_1_A-dijkstra.test.go
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-GRL_1_B-bellman_ford.test.go
+    title: test/aoj-GRL_1_B-bellman_ford.test.go
   _isVerificationFailed: false
   _pathExtension: go
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -100,8 +112,10 @@ data:
   - test/aoj-ALDS1_3_C-deque.test.go
   - test/aoj-ALDS1_3_B-queue.test.go
   - test/aoj-ALDS1_9_C-binary_haep.test.go
+  - test/aoj-GRL_1_B-bellman_ford.test.go
   - test/aoj-DSL_1_A-union_find.test.go
   - test/aoj-ALDS1_3_A-stack.test.go
+  - algorithm/bellman_ford.go
   - algorithm/deque.go
   - algorithm/union_find.go
   - algorithm/dijkstra.go
@@ -112,19 +126,21 @@ data:
   path: test/aoj-ITP1_1_A.test.go
   requiredBy:
   - main.go
+  - algorithm/bellman_ford.go
   - algorithm/deque.go
   - algorithm/union_find.go
   - algorithm/dijkstra.go
   - algorithm/queue.go
   - algorithm/binary_heap.go
   - algorithm/stack.go
-  timestamp: '2024-08-25 00:57:10+09:00'
+  timestamp: '2024-08-25 05:23:23+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith:
   - test/aoj-GRL_1_A-dijkstra.test.go
   - test/aoj-ALDS1_3_C-deque.test.go
   - test/aoj-ALDS1_3_B-queue.test.go
   - test/aoj-ALDS1_9_C-binary_haep.test.go
+  - test/aoj-GRL_1_B-bellman_ford.test.go
   - test/aoj-DSL_1_A-union_find.test.go
   - test/aoj-ALDS1_3_A-stack.test.go
 documentation_of: test/aoj-ITP1_1_A.test.go
