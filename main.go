@@ -11,8 +11,18 @@ import (
 	"golang.org/x/exp/constraints"
 )
 
-var sc = bufio.NewScanner(os.Stdin)
-var wr = bufio.NewWriter(os.Stdout)
+const (
+	Inf  int     = 1e9
+	Linf int     = 1e18
+	Eps  float64 = 1e-10
+	Mod  int     = 998244353
+	Mod2 int     = 1e9 + 7
+)
+
+var (
+	sc = bufio.NewScanner(os.Stdin)
+	wr = bufio.NewWriter(os.Stdout)
+)
 
 func getInt() int {
 	sc.Scan()
@@ -110,11 +120,24 @@ func abs[T constraints.Integer | constraints.Float](a T) T {
 	return -a
 }
 
-func minElement[T constraints.Ordered](v []T) int {
-	itr := 0
-	if len(v) == 0 {
-		return itr
+func accumulate[T any](v []T, init T, op func(acc T, x T) T) T {
+	for i := 0; i < len(v); i++ {
+		init = op(init, v[i])
 	}
+	return init
+}
+
+func accumulateDefault[T constraints.Integer | constraints.Float](v []T) T {
+	return accumulate(v, 0, func(acc T, x T) T {
+		return acc + x
+	})
+}
+
+func minElement[T constraints.Ordered](v []T) int {
+	if len(v) == 0 {
+		return 0
+	}
+	itr := 0
 	mn := v[0]
 	for i := 1; i < len(v); i++ {
 		if chmin(&mn, v[i]) {
@@ -125,10 +148,10 @@ func minElement[T constraints.Ordered](v []T) int {
 }
 
 func maxElement[T constraints.Ordered](v []T) int {
-	itr := 0
 	if len(v) == 0 {
-		return itr
+		return 0
 	}
+	itr := 0
 	mx := v[0]
 	for i := 1; i < len(v); i++ {
 		if chmax(&mx, v[i]) {
@@ -176,6 +199,7 @@ func main() {
 	out(a, b, c)
 
 	w := []int{3, 1, 4, 2, 5}
+	out(accumulateDefault(w))
 	out(w, minElement(w), maxElement(w))
 
 	sort.Ints(w)
