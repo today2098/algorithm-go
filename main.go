@@ -45,6 +45,14 @@ func getInts(n int) []int {
 	return v
 }
 
+func getStrings(n int) []string {
+	vs := make([]string, n)
+	for i := 0; i < n; i++ {
+		vs[i] = getString()
+	}
+	return vs
+}
+
 func out(x ...any) {
 	fmt.Fprintln(wr, x...)
 }
@@ -57,6 +65,12 @@ func outArray[T any](arr []T) {
 		fmt.Fprintf(wr, "%v", arr[len(arr)-1])
 	}
 	fmt.Fprintf(wr, "\n")
+}
+
+func fill[T any](v []T, x T) {
+	for i := 0; i < len(v); i++ {
+		v[i] = x
+	}
 }
 
 func min[T constraints.Ordered](a T, b T) T {
@@ -73,11 +87,55 @@ func max[T constraints.Ordered](a T, b T) T {
 	return b
 }
 
+func chmin[T constraints.Ordered](a *T, b T) bool {
+	if *a > b {
+		*a = b
+		return true
+	}
+	return false
+}
+
+func chmax[T constraints.Ordered](a *T, b T) bool {
+	if *a < b {
+		*a = b
+		return true
+	}
+	return false
+}
+
 func abs[T constraints.Integer | constraints.Float](a T) T {
 	if a >= 0 {
 		return a
 	}
 	return -a
+}
+
+func minElement[T constraints.Ordered](v []T) int {
+	itr := 0
+	if len(v) == 0 {
+		return itr
+	}
+	mn := v[0]
+	for i := 1; i < len(v); i++ {
+		if chmin(&mn, v[i]) {
+			itr = i
+		}
+	}
+	return itr
+}
+
+func maxElement[T constraints.Ordered](v []T) int {
+	itr := 0
+	if len(v) == 0 {
+		return itr
+	}
+	mx := v[0]
+	for i := 1; i < len(v); i++ {
+		if chmax(&mx, v[i]) {
+			itr = i
+		}
+	}
+	return itr
 }
 
 func lowerBound[T constraints.Ordered](v []T, x T) int {
@@ -102,12 +160,24 @@ func main() {
 	n, m, s := getInt(), getFloat64(), getString()
 	out(n, m, s)
 
-	v := getInts(n)
+	v, vs := getInts(n), getStrings(n)
+	outArray(v)
+	outArray(vs)
+
+	fill(v, -1)
 	outArray(v)
 
 	out(min("hello", "world"), max("hello", "world"))
 	out(abs(-10), abs(10))
 
-	w := []int{1, 2, 3, 4, 5}
-	out(lowerBound(w, 3), upperBound(w, 3))
+	a, b, c := 0, 1, -1
+	chmin(&b, a)
+	chmax(&c, a)
+	out(a, b, c)
+
+	w := []int{3, 1, 4, 2, 5}
+	out(w, minElement(w), maxElement(w))
+
+	sort.Ints(w)
+	out(w, lowerBound(w, 3), upperBound(w, 3))
 }
