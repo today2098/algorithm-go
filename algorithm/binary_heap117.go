@@ -12,7 +12,7 @@ type BinaryHeap117 struct {
 
 type BinaryHeap117CmpFunc func(a, b interface{}) bool
 
-// Create a binary-heap.
+// Create a new binary-heap.
 func NewBinaryHeap117(f BinaryHeap117CmpFunc) *BinaryHeap117 {
 	return &BinaryHeap117{
 		cmp:  f,
@@ -20,7 +20,7 @@ func NewBinaryHeap117(f BinaryHeap117CmpFunc) *BinaryHeap117 {
 	}
 }
 
-// Create a basic binary-heap.
+// Create a new basic binary-heap.
 func NewDefaultBinaryHeap117() *BinaryHeap117 {
 	return NewBinaryHeap117(func(a, b interface{}) bool {
 		return a.(int) > b.(int)
@@ -83,7 +83,7 @@ func (b *BinaryHeap117) Push(x interface{}) {
 	b.shiftUp(b.Size())
 }
 
-// Removes the largest element from the binary-heap and returns the element.
+// Removes and returns the largest element.
 func (b *BinaryHeap117) Pop() interface{} {
 	if b.Empty() {
 		panic(ErrBinaryHeap117Empty)
