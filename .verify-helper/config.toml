@@ -5,6 +5,3 @@
 # and the argument is interpreted relative to ./examples/go.
 # -C option is available in Go >=1.20.
 # execute = "go run -C ./examples/go ../../{path}"
-
-compile = "go build -C ./test -o debug.out ../{path}"
-execute = "./debug.out"
