@@ -9,7 +9,7 @@ type Stack117 struct {
 	Data []interface{}
 }
 
-// Create a stack.
+// Create a new stack.
 func NewStack117() *Stack117 {
 	return &Stack117{
 		Data: []interface{}{},
