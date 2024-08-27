@@ -1,3 +1,5 @@
+//go:build go1.18
+
 package main
 
 import (
@@ -12,11 +14,11 @@ import (
 )
 
 const (
-	Inf  int     = 1e9
-	Linf int     = 1e18
-	Eps  float64 = 1e-10
-	Mod  int     = 998244353
-	Mod2 int     = 1e9 + 7
+	inf  int     = 1e9
+	linf int     = 1e18
+	eps  float64 = 1e-10
+	mod  int     = 998244353
+	mod2 int     = 1e9 + 7
 )
 
 var (
@@ -180,6 +182,8 @@ func main() {
 	sc.Buffer([]byte{}, math.MaxInt32)
 	defer wr.Flush()
 
+	out(inf, linf, eps, mod, mod2)
+
 	n, m, s := getInt(), getFloat64(), getString()
 	out(n, m, s)
 
@@ -191,12 +195,13 @@ func main() {
 	outArray(v)
 
 	out(min("hello", "world"), max("hello", "world"))
-	out(abs(-10), abs(10))
 
 	a, b, c := 0, 1, -1
 	chmin(&b, a)
 	chmax(&c, a)
 	out(a, b, c)
+
+	out(abs(-10), abs(10))
 
 	w := []int{3, 1, 4, 2, 5}
 	out(accumulateDefault(w))
