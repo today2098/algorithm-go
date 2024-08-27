@@ -44,9 +44,6 @@ data:
     path: test/aoj-ALDS1_3_A-stack.test.go
     title: test/aoj-ALDS1_3_A-stack.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-ALDS1_3_A-stack117.test.go
-    title: test/aoj-ALDS1_3_A-stack117.test.go
-  - icon: ':heavy_check_mark:'
     path: test/aoj-ALDS1_3_B-queue.test.go
     title: test/aoj-ALDS1_3_B-queue.test.go
   - icon: ':heavy_check_mark:'
@@ -70,6 +67,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj-GRL_1_A-dijkstra.test.go
     title: test/aoj-GRL_1_A-dijkstra.test.go
+  - icon: ':heavy_check_mark:'
+    path: test/aoj-GRL_1_B-bellman_ford.test.go
+    title: test/aoj-GRL_1_B-bellman_ford.test.go
   - icon: ':heavy_check_mark:'
     path: test/aoj-ITP1_1_A.test.go
     title: test/aoj-ITP1_1_A.test.go
@@ -118,9 +118,6 @@ data:
     path: test/aoj-ALDS1_3_A-stack.test.go
     title: test/aoj-ALDS1_3_A-stack.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-ALDS1_3_A-stack117.test.go
-    title: test/aoj-ALDS1_3_A-stack117.test.go
-  - icon: ':heavy_check_mark:'
     path: test/aoj-ALDS1_3_B-queue.test.go
     title: test/aoj-ALDS1_3_B-queue.test.go
   - icon: ':heavy_check_mark:'
@@ -145,31 +142,35 @@ data:
     path: test/aoj-GRL_1_A-dijkstra.test.go
     title: test/aoj-GRL_1_A-dijkstra.test.go
   - icon: ':heavy_check_mark:'
+    path: test/aoj-GRL_1_B-bellman_ford.test.go
+    title: test/aoj-GRL_1_B-bellman_ford.test.go
+  - icon: ':heavy_check_mark:'
     path: test/aoj-ITP1_1_A.test.go
     title: test/aoj-ITP1_1_A.test.go
   _isVerificationFailed: false
   _pathExtension: go
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_B
+    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/3/ALDS1_3_A
   bundledCode: "Traceback (most recent call last):\n  File \"/home/runner/.local/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/home/runner/.local/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
-    RuntimeError: bundler is not specified: test/aoj-GRL_1_B-bellman_ford.test.go\n"
-  code: "//go:build ignore\n\n// verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_B\n\
-    package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"math\"\n\t\"os\"\n\t\"strconv\"\
-    \n\n\t\"github.com/today2098/algorithm-go/algorithm\"\n)\n\nvar sc = bufio.NewScanner(os.Stdin)\n\
-    var wr = bufio.NewWriter(os.Stdout)\n\nfunc getInt() int {\n\tsc.Scan()\n\telem,\
-    \ err := strconv.Atoi(sc.Text())\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\treturn\
-    \ elem\n}\n\nfunc out(x ...any) {\n\tfmt.Fprintln(wr, x...)\n}\n\nfunc main()\
-    \ {\n\tsc.Split(bufio.ScanWords)\n\tsc.Buffer([]byte{}, math.MaxInt32)\n\tdefer\
-    \ wr.Flush()\n\n\tn, m, r := getInt(), getInt(), getInt()\n\n\tbf := algorithm.NewDefaultBellmanFord(n)\n\
-    \tfor i := 0; i < m; i++ {\n\t\ts, t, d := getInt(), getInt(), getInt()\n\t\t\
-    bf.AddEdge(s, t, d)\n\t}\n\n\tif bf.BellmanFord(r) {\n\t\tout(\"NEGATIVE CYCLE\"\
-    )\n\t\treturn\n\t}\n\n\tfor i := 0; i < n; i++ {\n\t\tans := bf.Distance(i)\n\t\
-    \tif ans == bf.Infinity() {\n\t\t\tout(\"INF\")\n\t\t} else {\n\t\t\tout(ans)\n\
-    \t\t}\n\t}\n}\n"
+    RuntimeError: bundler is not specified: test/aoj-ALDS1_3_A-stack117.test.go\n"
+  code: "//go:build ignore\n\n// verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/3/ALDS1_3_A\n\
+    \npackage main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"math\"\n\t\"os\"\n\t\"\
+    strconv\"\n\t\"strings\"\n\n\t\"github.com/today2098/algorithm-go/algorithm\"\n\
+    )\n\nvar (\n\tsc = bufio.NewScanner(os.Stdin)\n\twr = bufio.NewWriter(os.Stdout)\n\
+    )\n\nfunc out(x ...interface{}) {\n\tfmt.Fprintln(wr, x...)\n}\n\nfunc main()\
+    \ {\n\tsc.Split(bufio.ScanLines)\n\tsc.Buffer([]byte{}, math.MaxInt32)\n\tdefer\
+    \ wr.Flush()\n\n\tsc.Scan()\n\tquery := strings.Split(sc.Text(), \" \")\n\n\t\
+    st := algorithm.NewStack117()\n\tfor _, elem := range query {\n\t\tnum, err :=\
+    \ strconv.Atoi(elem)\n\t\tif err == nil {\n\t\t\tst.Push(num)\n\t\t} else {\n\t\
+    \t\tif elem == \"+\" {\n\t\t\t\ttmp := st.Pop().(int) + st.Pop().(int)\n\t\t\t\
+    \tst.Push(tmp)\n\t\t\t} else if elem == \"-\" {\n\t\t\t\ttmp := -st.Pop().(int)\
+    \ + st.Pop().(int)\n\t\t\t\tst.Push(tmp)\n\t\t\t} else {\n\t\t\t\ttmp := st.Pop().(int)\
+    \ * st.Pop().(int)\n\t\t\t\tst.Push(tmp)\n\t\t\t}\n\t\t}\n\t}\n\n\tans := st.Pop().(int)\n\
+    \tout(ans)\n}\n"
   dependsOn:
   - main.go
   - test/aoj-GRL_1_A-dijkstra.test.go
@@ -179,10 +180,10 @@ data:
   - test/aoj-ALDS1_9_C-binary_haep.test.go
   - test/aoj-ALDS1_3_B-queue117.test.go
   - test/aoj-ALDS1_3_C-deque117.test.go
+  - test/aoj-GRL_1_B-bellman_ford.test.go
   - test/aoj-ITP1_1_A.test.go
   - test/aoj-DSL_1_A-union_find.test.go
   - test/aoj-ALDS1_3_A-stack.test.go
-  - test/aoj-ALDS1_3_A-stack117.test.go
   - algorithm/bellman_ford.go
   - algorithm/stack117.go
   - algorithm/binary_heap117.go
@@ -196,7 +197,7 @@ data:
   - algorithm/stack.go
   - main117.go
   isVerificationFile: true
-  path: test/aoj-GRL_1_B-bellman_ford.test.go
+  path: test/aoj-ALDS1_3_A-stack117.test.go
   requiredBy:
   - main.go
   - algorithm/bellman_ford.go
@@ -221,14 +222,14 @@ data:
   - test/aoj-ALDS1_9_C-binary_haep.test.go
   - test/aoj-ALDS1_3_B-queue117.test.go
   - test/aoj-ALDS1_3_C-deque117.test.go
+  - test/aoj-GRL_1_B-bellman_ford.test.go
   - test/aoj-ITP1_1_A.test.go
   - test/aoj-DSL_1_A-union_find.test.go
   - test/aoj-ALDS1_3_A-stack.test.go
-  - test/aoj-ALDS1_3_A-stack117.test.go
-documentation_of: test/aoj-GRL_1_B-bellman_ford.test.go
+documentation_of: test/aoj-ALDS1_3_A-stack117.test.go
 layout: document
 redirect_from:
-- /verify/test/aoj-GRL_1_B-bellman_ford.test.go
-- /verify/test/aoj-GRL_1_B-bellman_ford.test.go.html
-title: test/aoj-GRL_1_B-bellman_ford.test.go
+- /verify/test/aoj-ALDS1_3_A-stack117.test.go
+- /verify/test/aoj-ALDS1_3_A-stack117.test.go.html
+title: test/aoj-ALDS1_3_A-stack117.test.go
 ---
