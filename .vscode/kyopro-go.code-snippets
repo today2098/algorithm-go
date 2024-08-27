@@ -33,11 +33,11 @@
 			")",
 			"",
 			"const (",
-			"\tInf  int     = 1e9",
-			"\tLinf int     = 1e18",
-			"\tEps  float64 = 1e-10",
-			"\tMod  int     = 998244353",
-			"\tMod2 int     = 1e9 + 7",
+			"\tinf  int     = 1e9",
+			"\tlinf int     = 1e18",
+			"\teps  float64 = 1e-10",
+			"\tmod  int     = 998244353",
+			"\tmod2 int     = 1e9 + 7",
 			")",
 			"",
 			"var (",
@@ -202,13 +202,12 @@
 			"\tdefer wr.Flush()",
 			"",
 			"\t$0",
-			"}",
-			""
+			"}"
 		],
 		"description": ""
 	},
 	"Main Template for Go 1.17": {
-		"prefix": "main117",
+		"prefix": "main",
 		"body": [
 			"package main",
 			"",
