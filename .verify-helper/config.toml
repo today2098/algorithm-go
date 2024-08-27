@@ -6,5 +6,5 @@
 # -C option is available in Go >=1.20.
 # execute = "go run -C ./examples/go ../../{path}"
 
-compile = "go build -C ./test ../../{path}"
+compile = "go build -C ./test ../{path}"
 execute = "./debug.out"
