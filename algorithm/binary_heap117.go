@@ -77,7 +77,7 @@ func (b *BinaryHeap117) Top() interface{} {
 	return b.tree[1]
 }
 
-// Inserts an element to the binary-heap.
+// Inserts an element into the binary-heap.
 func (b *BinaryHeap117) Push(x interface{}) {
 	b.tree = append(b.tree, x)
 	b.shiftUp(b.Size())

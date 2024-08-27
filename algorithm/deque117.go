@@ -12,7 +12,7 @@ type Deque117 struct {
 	Data *list.List
 }
 
-// Create a deque.
+// Create a new deque.
 func NewDeque117() *Deque117 {
 	return &Deque117{Data: list.New()}
 }
@@ -27,7 +27,7 @@ func (dq *Deque117) Size() int {
 	return dq.Data.Len()
 }
 
-// Returns the first element of deque.
+// Returns the first element.
 func (dq *Deque117) Front() interface{} {
 	res := dq.Data.Front()
 	if res == nil {
@@ -36,7 +36,7 @@ func (dq *Deque117) Front() interface{} {
 	return res.Value
 }
 
-// Returns the last element of deque.
+// Returns the last element.
 func (dq *Deque117) Back() interface{} {
 	res := dq.Data.Back()
 	if res == nil {
@@ -45,31 +45,31 @@ func (dq *Deque117) Back() interface{} {
 	return res.Value
 }
 
-// Inserts an element to the front of deque.
+// Inserts an element at the front.
 func (dq *Deque117) PushFront(x interface{}) {
 	dq.Data.PushFront(x)
 }
 
-// Inserts elements to the front of deque.
+// Inserts elements at the front.
 func (dq *Deque117) PushFrontRange(v []interface{}) {
 	for i := len(v) - 1; i >= 0; i-- {
 		dq.Data.PushFront(v[i])
 	}
 }
 
-// Inserts an element to the back of deque.
+// Inserts an element at the back.
 func (dq *Deque117) PushBack(x interface{}) {
 	dq.Data.PushBack(x)
 }
 
-// Inserts elements to the back of deque.
+// Inserts elements at the back.
 func (dq *Deque117) PushBackRange(v []interface{}) {
 	for i := 0; i < len(v); i++ {
 		dq.Data.PushBack(v[i])
 	}
 }
 
-// Removes the first element of deque and returns the element.
+// Removes and returns the first element.
 func (dq *Deque117) PopFront() interface{} {
 	res := dq.Data.Front()
 	if res == nil {
@@ -78,7 +78,7 @@ func (dq *Deque117) PopFront() interface{} {
 	return dq.Data.Remove(res)
 }
 
-// Removes the last element of deque and returns the element.
+// Removes and returns the last element.
 func (dq *Deque117) PopBack() interface{} {
 	res := dq.Data.Back()
 	if res == nil {
