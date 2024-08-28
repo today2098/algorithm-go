@@ -85,14 +85,14 @@ func fill[T any](v []T, x T) {
 	}
 }
 
-func min[T constraints.Ordered](a T, b T) T {
+func min[T constraints.Ordered](a, b T) T {
 	if a < b {
 		return a
 	}
 	return b
 }
 
-func max[T constraints.Ordered](a T, b T) T {
+func max[T constraints.Ordered](a, b T) T {
 	if a > b {
 		return a
 	}
@@ -122,7 +122,7 @@ func abs[T constraints.Integer | constraints.Float](a T) T {
 	return -a
 }
 
-func accumulate[T any](v []T, init T, op func(acc T, x T) T) T {
+func accumulate[T any](v []T, init T, op func(acc, x T) T) T {
 	for i := 0; i < len(v); i++ {
 		init = op(init, v[i])
 	}
@@ -130,7 +130,7 @@ func accumulate[T any](v []T, init T, op func(acc T, x T) T) T {
 }
 
 func accumulateDefault[T constraints.Integer | constraints.Float](v []T) T {
-	return accumulate(v, 0, func(acc T, x T) T {
+	return accumulate(v, 0, func(acc, x T) T {
 		return acc + x
 	})
 }

@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"math"
 	"os"
+	"sort"
 	"strconv"
 )
 
@@ -83,6 +84,64 @@ func fillInts(v []int, x int) {
 	}
 }
 
+func min(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+func minElement(v []int) int {
+	if len(v) == 0 {
+		return 0
+	}
+	itr := 0
+	mn := v[0]
+	for i := 1; i < len(v); i++ {
+		if v[i] < mn {
+			mn = v[i]
+			itr = i
+		}
+	}
+	return itr
+}
+
+func maxElement(v []int) int {
+	if len(v) == 0 {
+		return 0
+	}
+	itr := 0
+	mx := v[0]
+	for i := 1; i < len(v); i++ {
+		if v[i] > mx {
+			mx = v[i]
+			itr = i
+		}
+	}
+	return itr
+}
+
+func lowerBound(v []int, x int) int {
+	itr := sort.Search(len(v), func(i int) bool {
+		return v[i] >= x
+	})
+	return itr
+}
+
+func upperBound(v []int, x int) int {
+	itr := sort.Search(len(v), func(i int) bool {
+		return v[i] > x
+	})
+	return itr
+}
+
 func main() {
 	sc.Split(bufio.ScanWords)
 	sc.Buffer([]byte{}, math.MaxInt32)
@@ -99,4 +158,10 @@ func main() {
 	w := make([]int, 5)
 	fillInts(w, -1)
 	outInts(w)
+
+	vv := []int{3, 1, 4, 2, 5}
+	out(vv, minElement(vv), maxElement(vv))
+
+	sort.Ints(vv)
+	out(vv, lowerBound(vv, 3), upperBound(vv, 3))
 }
