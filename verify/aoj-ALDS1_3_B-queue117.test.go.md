@@ -23,6 +23,9 @@ data:
     path: algorithm/queue.go
     title: algorithm/queue.go
   - icon: ':heavy_check_mark:'
+    path: algorithm/queue117.go
+    title: algorithm/queue117.go
+  - icon: ':heavy_check_mark:'
     path: algorithm/stack.go
     title: algorithm/stack.go
   - icon: ':heavy_check_mark:'
@@ -46,9 +49,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aoj-ALDS1_3_B-queue.test.go
     title: verify/aoj-ALDS1_3_B-queue.test.go
-  - icon: ':heavy_check_mark:'
-    path: verify/aoj-ALDS1_3_B-queue117.test.go
-    title: verify/aoj-ALDS1_3_B-queue117.test.go
   - icon: ':heavy_check_mark:'
     path: verify/aoj-ALDS1_3_C-deque.test.go
     title: verify/aoj-ALDS1_3_C-deque.test.go
@@ -96,6 +96,9 @@ data:
     path: algorithm/queue.go
     title: algorithm/queue.go
   - icon: ':heavy_check_mark:'
+    path: algorithm/queue117.go
+    title: algorithm/queue117.go
+  - icon: ':heavy_check_mark:'
     path: algorithm/stack.go
     title: algorithm/stack.go
   - icon: ':heavy_check_mark:'
@@ -120,9 +123,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aoj-ALDS1_3_B-queue.test.go
     title: verify/aoj-ALDS1_3_B-queue.test.go
-  - icon: ':heavy_check_mark:'
-    path: verify/aoj-ALDS1_3_B-queue117.test.go
-    title: verify/aoj-ALDS1_3_B-queue117.test.go
   - icon: ':heavy_check_mark:'
     path: verify/aoj-ALDS1_3_C-deque.test.go
     title: verify/aoj-ALDS1_3_C-deque.test.go
@@ -150,33 +150,36 @@ data:
   _isVerificationFailed: false
   _pathExtension: go
   _verificationStatusIcon: ':heavy_check_mark:'
-  attributes: {}
+  attributes:
+    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/3/ALDS1_3_B
   bundledCode: "Traceback (most recent call last):\n  File \"/home/runner/.local/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/home/runner/.local/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
-    RuntimeError: bundler is not specified: algorithm/queue117.go\n"
-  code: "package algorithm\n\nimport \"errors\"\n\nvar ErrQueue117Empty = errors.New(\"\
-    Queue117: queue is empty\")\n\n// A queue structure.\ntype Queue117 struct {\n\
-    \tData []interface{}\n}\n\n// Create a new queue.\nfunc NewQueue117() *Queue117\
-    \ {\n\treturn &Queue117{\n\t\tData: []interface{}{},\n\t}\n}\n\n// Checks if the\
-    \ queue is empty.\nfunc (q *Queue117) Empty() bool {\n\treturn q.Size() == 0\n\
-    }\n\n// Returns the number of elements.\nfunc (q *Queue117) Size() int {\n\treturn\
-    \ len(q.Data)\n}\n\n// Returns the front element.\nfunc (q *Queue117) Front()\
-    \ interface{} {\n\tif q.Empty() {\n\t\tpanic(ErrQueue117Empty)\n\t}\n\treturn\
-    \ q.Data[0]\n}\n\n// Inserts an element at the back.\nfunc (q *Queue117) Push(x\
-    \ interface{}) {\n\tq.Data = append(q.Data, x)\n}\n\n// Inserts an elements at\
-    \ the back.\nfunc (q *Queue117) PushRange(v []interface{}) {\n\tfor i := 0; i\
-    \ < len(v); i++ {\n\t\tq.Data = append(q.Data, v[i])\n\t}\n}\n\n// Removes and\
-    \ returns the front element.\nfunc (q *Queue117) Pop() interface{} {\n\tif q.Empty()\
-    \ {\n\t\tpanic(ErrQueue117Empty)\n\t}\n\tres := q.Data[0]\n\tq.Data = q.Data[1:]\n\
-    \treturn res\n}\n"
+    RuntimeError: bundler is not specified: verify/aoj-ALDS1_3_B-queue117.test.go\n"
+  code: "//go:build ignore\n\n// verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/3/ALDS1_3_B\n\
+    \npackage main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"math\"\n\t\"os\"\n\t\"\
+    strconv\"\n\n\t\"github.com/today2098/algorithm-go/algorithm\"\n)\n\nvar (\n\t\
+    sc = bufio.NewScanner(os.Stdin)\n\twr = bufio.NewWriter(os.Stdout)\n)\n\nfunc\
+    \ getInt() int {\n\tsc.Scan()\n\telem, err := strconv.Atoi(sc.Text())\n\tif err\
+    \ != nil {\n\t\tpanic(err)\n\t}\n\treturn elem\n}\n\nfunc getString() string {\n\
+    \tsc.Scan()\n\treturn sc.Text()\n}\n\nfunc getStrings(n int) []string {\n\tvs\
+    \ := make([]string, n)\n\tfor i := 0; i < n; i++ {\n\t\tvs[i] = getString()\n\t\
+    }\n\treturn vs\n}\n\nfunc out(x ...interface{}) {\n\tfmt.Fprintln(wr, x...)\n\
+    }\n\nfunc main() {\n\tsc.Split(bufio.ScanWords)\n\tsc.Buffer([]byte{}, math.MaxInt32)\n\
+    \tdefer wr.Flush()\n\n\tn, q := getInt(), getInt()\n\n\ttype task struct {\n\t\
+    \tname string\n\t\ttime int\n\t}\n\tque := algorithm.NewQueue117()\n\tfor i :=\
+    \ 0; i < n; i++ {\n\t\tt := &task{}\n\t\tt.name, t.time = getString(), getInt()\n\
+    \t\tque.Push(t)\n\t}\n\n\tnow := 0\n\tfor !que.Empty() {\n\t\tt := que.Pop().(*task)\n\
+    \t\tif t.time <= q {\n\t\t\tnow += t.time\n\t\t\tout(t.name, now)\n\t\t} else\
+    \ {\n\t\t\tnow += q\n\t\t\tt.time -= q\n\t\t\tque.Push(t)\n\t\t}\n\t}\n}\n"
   dependsOn:
   - main.go
   - algorithm/bellman_ford.go
   - algorithm/stack117.go
   - algorithm/binary_heap117.go
   - algorithm/deque117.go
+  - algorithm/queue117.go
   - algorithm/deque.go
   - algorithm/union_find.go
   - algorithm/dijkstra.go
@@ -188,7 +191,6 @@ data:
   - verify/aoj-ALDS1_3_C-deque.test.go
   - verify/aoj-ALDS1_3_B-queue.test.go
   - verify/aoj-ALDS1_9_C-binary_haep.test.go
-  - verify/aoj-ALDS1_3_B-queue117.test.go
   - verify/aoj-ALDS1_3_C-deque117.test.go
   - verify/aoj-GRL_1_B-bellman_ford.test.go
   - verify/aoj-ITP1_1_A.test.go
@@ -196,14 +198,15 @@ data:
   - verify/aoj-ALDS1_3_A-stack.test.go
   - verify/aoj-ALDS1_3_A-stack117.test.go
   - main117.go
-  isVerificationFile: false
-  path: algorithm/queue117.go
+  isVerificationFile: true
+  path: verify/aoj-ALDS1_3_B-queue117.test.go
   requiredBy:
   - main.go
   - algorithm/bellman_ford.go
   - algorithm/stack117.go
   - algorithm/binary_heap117.go
   - algorithm/deque117.go
+  - algorithm/queue117.go
   - algorithm/deque.go
   - algorithm/union_find.go
   - algorithm/dijkstra.go
@@ -212,24 +215,23 @@ data:
   - algorithm/stack.go
   - main117.go
   timestamp: '2024-08-28 00:28:44+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: TEST_ACCEPTED
   verifiedWith:
   - verify/aoj-GRL_1_A-dijkstra.test.go
   - verify/aoj-ALDS1_9_C-binary_haep117.test.go
   - verify/aoj-ALDS1_3_C-deque.test.go
   - verify/aoj-ALDS1_3_B-queue.test.go
   - verify/aoj-ALDS1_9_C-binary_haep.test.go
-  - verify/aoj-ALDS1_3_B-queue117.test.go
   - verify/aoj-ALDS1_3_C-deque117.test.go
   - verify/aoj-GRL_1_B-bellman_ford.test.go
   - verify/aoj-ITP1_1_A.test.go
   - verify/aoj-DSL_1_A-union_find.test.go
   - verify/aoj-ALDS1_3_A-stack.test.go
   - verify/aoj-ALDS1_3_A-stack117.test.go
-documentation_of: algorithm/queue117.go
+documentation_of: verify/aoj-ALDS1_3_B-queue117.test.go
 layout: document
 redirect_from:
-- /library/algorithm/queue117.go
-- /library/algorithm/queue117.go.html
-title: algorithm/queue117.go
+- /verify/verify/aoj-ALDS1_3_B-queue117.test.go
+- /verify/verify/aoj-ALDS1_3_B-queue117.test.go.html
+title: verify/aoj-ALDS1_3_B-queue117.test.go
 ---

@@ -41,38 +41,38 @@ data:
     path: main117.go
     title: main117.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-ALDS1_3_A-stack.test.go
-    title: test/aoj-ALDS1_3_A-stack.test.go
+    path: verify/aoj-ALDS1_3_A-stack.test.go
+    title: verify/aoj-ALDS1_3_A-stack.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-ALDS1_3_A-stack117.test.go
-    title: test/aoj-ALDS1_3_A-stack117.test.go
+    path: verify/aoj-ALDS1_3_A-stack117.test.go
+    title: verify/aoj-ALDS1_3_A-stack117.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-ALDS1_3_B-queue.test.go
-    title: test/aoj-ALDS1_3_B-queue.test.go
+    path: verify/aoj-ALDS1_3_B-queue.test.go
+    title: verify/aoj-ALDS1_3_B-queue.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-ALDS1_3_B-queue117.test.go
-    title: test/aoj-ALDS1_3_B-queue117.test.go
+    path: verify/aoj-ALDS1_3_B-queue117.test.go
+    title: verify/aoj-ALDS1_3_B-queue117.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-ALDS1_3_C-deque.test.go
-    title: test/aoj-ALDS1_3_C-deque.test.go
+    path: verify/aoj-ALDS1_3_C-deque.test.go
+    title: verify/aoj-ALDS1_3_C-deque.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-ALDS1_3_C-deque117.test.go
-    title: test/aoj-ALDS1_3_C-deque117.test.go
+    path: verify/aoj-ALDS1_3_C-deque117.test.go
+    title: verify/aoj-ALDS1_3_C-deque117.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-ALDS1_9_C-binary_haep.test.go
-    title: test/aoj-ALDS1_9_C-binary_haep.test.go
+    path: verify/aoj-ALDS1_9_C-binary_haep.test.go
+    title: verify/aoj-ALDS1_9_C-binary_haep.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-ALDS1_9_C-binary_haep117.test.go
-    title: test/aoj-ALDS1_9_C-binary_haep117.test.go
+    path: verify/aoj-DSL_1_A-union_find.test.go
+    title: verify/aoj-DSL_1_A-union_find.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-DSL_1_A-union_find.test.go
-    title: test/aoj-DSL_1_A-union_find.test.go
+    path: verify/aoj-GRL_1_A-dijkstra.test.go
+    title: verify/aoj-GRL_1_A-dijkstra.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-GRL_1_B-bellman_ford.test.go
-    title: test/aoj-GRL_1_B-bellman_ford.test.go
+    path: verify/aoj-GRL_1_B-bellman_ford.test.go
+    title: verify/aoj-GRL_1_B-bellman_ford.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-ITP1_1_A.test.go
-    title: test/aoj-ITP1_1_A.test.go
+    path: verify/aoj-ITP1_1_A.test.go
+    title: verify/aoj-ITP1_1_A.test.go
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: algorithm/bellman_ford.go
@@ -115,74 +115,62 @@ data:
     title: main117.go
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj-ALDS1_3_A-stack.test.go
-    title: test/aoj-ALDS1_3_A-stack.test.go
+    path: verify/aoj-ALDS1_3_A-stack.test.go
+    title: verify/aoj-ALDS1_3_A-stack.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-ALDS1_3_A-stack117.test.go
-    title: test/aoj-ALDS1_3_A-stack117.test.go
+    path: verify/aoj-ALDS1_3_A-stack117.test.go
+    title: verify/aoj-ALDS1_3_A-stack117.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-ALDS1_3_B-queue.test.go
-    title: test/aoj-ALDS1_3_B-queue.test.go
+    path: verify/aoj-ALDS1_3_B-queue.test.go
+    title: verify/aoj-ALDS1_3_B-queue.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-ALDS1_3_B-queue117.test.go
-    title: test/aoj-ALDS1_3_B-queue117.test.go
+    path: verify/aoj-ALDS1_3_B-queue117.test.go
+    title: verify/aoj-ALDS1_3_B-queue117.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-ALDS1_3_C-deque.test.go
-    title: test/aoj-ALDS1_3_C-deque.test.go
+    path: verify/aoj-ALDS1_3_C-deque.test.go
+    title: verify/aoj-ALDS1_3_C-deque.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-ALDS1_3_C-deque117.test.go
-    title: test/aoj-ALDS1_3_C-deque117.test.go
+    path: verify/aoj-ALDS1_3_C-deque117.test.go
+    title: verify/aoj-ALDS1_3_C-deque117.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-ALDS1_9_C-binary_haep.test.go
-    title: test/aoj-ALDS1_9_C-binary_haep.test.go
+    path: verify/aoj-ALDS1_9_C-binary_haep.test.go
+    title: verify/aoj-ALDS1_9_C-binary_haep.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-ALDS1_9_C-binary_haep117.test.go
-    title: test/aoj-ALDS1_9_C-binary_haep117.test.go
+    path: verify/aoj-DSL_1_A-union_find.test.go
+    title: verify/aoj-DSL_1_A-union_find.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-DSL_1_A-union_find.test.go
-    title: test/aoj-DSL_1_A-union_find.test.go
+    path: verify/aoj-GRL_1_A-dijkstra.test.go
+    title: verify/aoj-GRL_1_A-dijkstra.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-GRL_1_B-bellman_ford.test.go
-    title: test/aoj-GRL_1_B-bellman_ford.test.go
+    path: verify/aoj-GRL_1_B-bellman_ford.test.go
+    title: verify/aoj-GRL_1_B-bellman_ford.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-ITP1_1_A.test.go
-    title: test/aoj-ITP1_1_A.test.go
+    path: verify/aoj-ITP1_1_A.test.go
+    title: verify/aoj-ITP1_1_A.test.go
   _isVerificationFailed: false
   _pathExtension: go
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_A
+    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/9/ALDS1_9_C
   bundledCode: "Traceback (most recent call last):\n  File \"/home/runner/.local/lib/python3.10/site-packages/onlinejudge_verify/documentation/build.py\"\
     , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
     \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/home/runner/.local/lib/python3.10/site-packages/onlinejudge_verify/languages/user_defined.py\"\
     , line 68, in bundle\n    raise RuntimeError('bundler is not specified: {}'.format(str(path)))\n\
-    RuntimeError: bundler is not specified: test/aoj-GRL_1_A-dijkstra.test.go\n"
-  code: "//go:build ignore\n\n// verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/1/GRL_1_A\n\
+    RuntimeError: bundler is not specified: verify/aoj-ALDS1_9_C-binary_haep117.test.go\n"
+  code: "//go:build ignore\n\n// verification-helper: PROBLEM https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/9/ALDS1_9_C\n\
     \npackage main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"math\"\n\t\"os\"\n\t\"\
-    strconv\"\n\n\t\"github.com/today2098/algorithm-go/algorithm\"\n)\n\nvar sc =\
-    \ bufio.NewScanner(os.Stdin)\nvar wr = bufio.NewWriter(os.Stdout)\n\nfunc getInt()\
-    \ int {\n\tsc.Scan()\n\telem, err := strconv.Atoi(sc.Text())\n\tif err != nil\
-    \ {\n\t\tpanic(err)\n\t}\n\treturn elem\n}\n\nfunc out(x ...any) {\n\tfmt.Fprintln(wr,\
+    strconv\"\n\n\t\"github.com/today2098/algorithm-go/algorithm\"\n)\n\nvar (\n\t\
+    sc = bufio.NewScanner(os.Stdin)\n\twr = bufio.NewWriter(os.Stdout)\n)\n\nfunc\
+    \ getInt() int {\n\tsc.Scan()\n\telem, err := strconv.Atoi(sc.Text())\n\tif err\
+    \ != nil {\n\t\tpanic(err)\n\t}\n\treturn elem\n}\n\nfunc getString() string {\n\
+    \tsc.Scan()\n\treturn sc.Text()\n}\n\nfunc out(x ...interface{}) {\n\tfmt.Fprintln(wr,\
     \ x...)\n}\n\nfunc main() {\n\tsc.Split(bufio.ScanWords)\n\tsc.Buffer([]byte{},\
-    \ math.MaxInt32)\n\tdefer wr.Flush()\n\n\tn, m, r := getInt(), getInt(), getInt()\n\
-    \n\tdijkstra := algorithm.NewDefaultDijkstra(n)\n\tfor i := 0; i < m; i++ {\n\t\
-    \ts, t, d := getInt(), getInt(), getInt()\n\t\tdijkstra.AddEdge(s, t, d)\n\t}\n\
-    \tdijkstra.Dijkstra(r)\n\n\tfor i := 0; i < n; i++ {\n\t\tans := dijkstra.Distance(i)\n\
-    \t\tif ans == dijkstra.Infinity() {\n\t\t\tout(\"INF\")\n\t\t} else {\n\t\t\t\
-    out(ans)\n\t\t}\n\t}\n}\n"
+    \ math.MaxInt32)\n\tdefer wr.Flush()\n\n\tpq := algorithm.NewDefaultBinaryHeap117()\n\
+    \tfor {\n\t\tquery := getString()\n\t\tif query == \"end\" {\n\t\t\tbreak\n\t\t\
+    }\n\n\t\tif query == \"insert\" {\n\t\t\tx := getInt()\n\t\t\tpq.Push(x)\n\t\t\
+    } else {\n\t\t\tout(pq.Pop())\n\t\t}\n\t}\n}\n"
   dependsOn:
   - main.go
-  - test/aoj-ALDS1_9_C-binary_haep117.test.go
-  - test/aoj-ALDS1_3_C-deque.test.go
-  - test/aoj-ALDS1_3_B-queue.test.go
-  - test/aoj-ALDS1_9_C-binary_haep.test.go
-  - test/aoj-ALDS1_3_B-queue117.test.go
-  - test/aoj-ALDS1_3_C-deque117.test.go
-  - test/aoj-GRL_1_B-bellman_ford.test.go
-  - test/aoj-ITP1_1_A.test.go
-  - test/aoj-DSL_1_A-union_find.test.go
-  - test/aoj-ALDS1_3_A-stack.test.go
-  - test/aoj-ALDS1_3_A-stack117.test.go
   - algorithm/bellman_ford.go
   - algorithm/stack117.go
   - algorithm/binary_heap117.go
@@ -194,9 +182,20 @@ data:
   - algorithm/queue.go
   - algorithm/binary_heap.go
   - algorithm/stack.go
+  - verify/aoj-GRL_1_A-dijkstra.test.go
+  - verify/aoj-ALDS1_3_C-deque.test.go
+  - verify/aoj-ALDS1_3_B-queue.test.go
+  - verify/aoj-ALDS1_9_C-binary_haep.test.go
+  - verify/aoj-ALDS1_3_B-queue117.test.go
+  - verify/aoj-ALDS1_3_C-deque117.test.go
+  - verify/aoj-GRL_1_B-bellman_ford.test.go
+  - verify/aoj-ITP1_1_A.test.go
+  - verify/aoj-DSL_1_A-union_find.test.go
+  - verify/aoj-ALDS1_3_A-stack.test.go
+  - verify/aoj-ALDS1_3_A-stack117.test.go
   - main117.go
   isVerificationFile: true
-  path: test/aoj-GRL_1_A-dijkstra.test.go
+  path: verify/aoj-ALDS1_9_C-binary_haep117.test.go
   requiredBy:
   - main.go
   - algorithm/bellman_ford.go
@@ -211,24 +210,24 @@ data:
   - algorithm/binary_heap.go
   - algorithm/stack.go
   - main117.go
-  timestamp: '2024-08-27 21:19:54+09:00'
+  timestamp: '2024-08-28 00:28:44+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith:
-  - test/aoj-ALDS1_9_C-binary_haep117.test.go
-  - test/aoj-ALDS1_3_C-deque.test.go
-  - test/aoj-ALDS1_3_B-queue.test.go
-  - test/aoj-ALDS1_9_C-binary_haep.test.go
-  - test/aoj-ALDS1_3_B-queue117.test.go
-  - test/aoj-ALDS1_3_C-deque117.test.go
-  - test/aoj-GRL_1_B-bellman_ford.test.go
-  - test/aoj-ITP1_1_A.test.go
-  - test/aoj-DSL_1_A-union_find.test.go
-  - test/aoj-ALDS1_3_A-stack.test.go
-  - test/aoj-ALDS1_3_A-stack117.test.go
-documentation_of: test/aoj-GRL_1_A-dijkstra.test.go
+  - verify/aoj-GRL_1_A-dijkstra.test.go
+  - verify/aoj-ALDS1_3_C-deque.test.go
+  - verify/aoj-ALDS1_3_B-queue.test.go
+  - verify/aoj-ALDS1_9_C-binary_haep.test.go
+  - verify/aoj-ALDS1_3_B-queue117.test.go
+  - verify/aoj-ALDS1_3_C-deque117.test.go
+  - verify/aoj-GRL_1_B-bellman_ford.test.go
+  - verify/aoj-ITP1_1_A.test.go
+  - verify/aoj-DSL_1_A-union_find.test.go
+  - verify/aoj-ALDS1_3_A-stack.test.go
+  - verify/aoj-ALDS1_3_A-stack117.test.go
+documentation_of: verify/aoj-ALDS1_9_C-binary_haep117.test.go
 layout: document
 redirect_from:
-- /verify/test/aoj-GRL_1_A-dijkstra.test.go
-- /verify/test/aoj-GRL_1_A-dijkstra.test.go.html
-title: test/aoj-GRL_1_A-dijkstra.test.go
+- /verify/verify/aoj-ALDS1_9_C-binary_haep117.test.go
+- /verify/verify/aoj-ALDS1_9_C-binary_haep117.test.go.html
+title: verify/aoj-ALDS1_9_C-binary_haep117.test.go
 ---

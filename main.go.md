@@ -38,41 +38,41 @@ data:
     path: main117.go
     title: main117.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-ALDS1_3_A-stack.test.go
-    title: test/aoj-ALDS1_3_A-stack.test.go
+    path: verify/aoj-ALDS1_3_A-stack.test.go
+    title: verify/aoj-ALDS1_3_A-stack.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-ALDS1_3_A-stack117.test.go
-    title: test/aoj-ALDS1_3_A-stack117.test.go
+    path: verify/aoj-ALDS1_3_A-stack117.test.go
+    title: verify/aoj-ALDS1_3_A-stack117.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-ALDS1_3_B-queue.test.go
-    title: test/aoj-ALDS1_3_B-queue.test.go
+    path: verify/aoj-ALDS1_3_B-queue.test.go
+    title: verify/aoj-ALDS1_3_B-queue.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-ALDS1_3_B-queue117.test.go
-    title: test/aoj-ALDS1_3_B-queue117.test.go
+    path: verify/aoj-ALDS1_3_B-queue117.test.go
+    title: verify/aoj-ALDS1_3_B-queue117.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-ALDS1_3_C-deque.test.go
-    title: test/aoj-ALDS1_3_C-deque.test.go
+    path: verify/aoj-ALDS1_3_C-deque.test.go
+    title: verify/aoj-ALDS1_3_C-deque.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-ALDS1_3_C-deque117.test.go
-    title: test/aoj-ALDS1_3_C-deque117.test.go
+    path: verify/aoj-ALDS1_3_C-deque117.test.go
+    title: verify/aoj-ALDS1_3_C-deque117.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-ALDS1_9_C-binary_haep.test.go
-    title: test/aoj-ALDS1_9_C-binary_haep.test.go
+    path: verify/aoj-ALDS1_9_C-binary_haep.test.go
+    title: verify/aoj-ALDS1_9_C-binary_haep.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-ALDS1_9_C-binary_haep117.test.go
-    title: test/aoj-ALDS1_9_C-binary_haep117.test.go
+    path: verify/aoj-ALDS1_9_C-binary_haep117.test.go
+    title: verify/aoj-ALDS1_9_C-binary_haep117.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-DSL_1_A-union_find.test.go
-    title: test/aoj-DSL_1_A-union_find.test.go
+    path: verify/aoj-DSL_1_A-union_find.test.go
+    title: verify/aoj-DSL_1_A-union_find.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-GRL_1_A-dijkstra.test.go
-    title: test/aoj-GRL_1_A-dijkstra.test.go
+    path: verify/aoj-GRL_1_A-dijkstra.test.go
+    title: verify/aoj-GRL_1_A-dijkstra.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-GRL_1_B-bellman_ford.test.go
-    title: test/aoj-GRL_1_B-bellman_ford.test.go
+    path: verify/aoj-GRL_1_B-bellman_ford.test.go
+    title: verify/aoj-GRL_1_B-bellman_ford.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-ITP1_1_A.test.go
-    title: test/aoj-ITP1_1_A.test.go
+    path: verify/aoj-ITP1_1_A.test.go
+    title: verify/aoj-ITP1_1_A.test.go
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: algorithm/bellman_ford.go
@@ -112,41 +112,41 @@ data:
     title: main117.go
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj-ALDS1_3_A-stack.test.go
-    title: test/aoj-ALDS1_3_A-stack.test.go
+    path: verify/aoj-ALDS1_3_A-stack.test.go
+    title: verify/aoj-ALDS1_3_A-stack.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-ALDS1_3_A-stack117.test.go
-    title: test/aoj-ALDS1_3_A-stack117.test.go
+    path: verify/aoj-ALDS1_3_A-stack117.test.go
+    title: verify/aoj-ALDS1_3_A-stack117.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-ALDS1_3_B-queue.test.go
-    title: test/aoj-ALDS1_3_B-queue.test.go
+    path: verify/aoj-ALDS1_3_B-queue.test.go
+    title: verify/aoj-ALDS1_3_B-queue.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-ALDS1_3_B-queue117.test.go
-    title: test/aoj-ALDS1_3_B-queue117.test.go
+    path: verify/aoj-ALDS1_3_B-queue117.test.go
+    title: verify/aoj-ALDS1_3_B-queue117.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-ALDS1_3_C-deque.test.go
-    title: test/aoj-ALDS1_3_C-deque.test.go
+    path: verify/aoj-ALDS1_3_C-deque.test.go
+    title: verify/aoj-ALDS1_3_C-deque.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-ALDS1_3_C-deque117.test.go
-    title: test/aoj-ALDS1_3_C-deque117.test.go
+    path: verify/aoj-ALDS1_3_C-deque117.test.go
+    title: verify/aoj-ALDS1_3_C-deque117.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-ALDS1_9_C-binary_haep.test.go
-    title: test/aoj-ALDS1_9_C-binary_haep.test.go
+    path: verify/aoj-ALDS1_9_C-binary_haep.test.go
+    title: verify/aoj-ALDS1_9_C-binary_haep.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-ALDS1_9_C-binary_haep117.test.go
-    title: test/aoj-ALDS1_9_C-binary_haep117.test.go
+    path: verify/aoj-ALDS1_9_C-binary_haep117.test.go
+    title: verify/aoj-ALDS1_9_C-binary_haep117.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-DSL_1_A-union_find.test.go
-    title: test/aoj-DSL_1_A-union_find.test.go
+    path: verify/aoj-DSL_1_A-union_find.test.go
+    title: verify/aoj-DSL_1_A-union_find.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-GRL_1_A-dijkstra.test.go
-    title: test/aoj-GRL_1_A-dijkstra.test.go
+    path: verify/aoj-GRL_1_A-dijkstra.test.go
+    title: verify/aoj-GRL_1_A-dijkstra.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-GRL_1_B-bellman_ford.test.go
-    title: test/aoj-GRL_1_B-bellman_ford.test.go
+    path: verify/aoj-GRL_1_B-bellman_ford.test.go
+    title: verify/aoj-GRL_1_B-bellman_ford.test.go
   - icon: ':heavy_check_mark:'
-    path: test/aoj-ITP1_1_A.test.go
-    title: test/aoj-ITP1_1_A.test.go
+    path: verify/aoj-ITP1_1_A.test.go
+    title: verify/aoj-ITP1_1_A.test.go
   _isVerificationFailed: false
   _pathExtension: go
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -173,28 +173,27 @@ data:
     \ 0; i < len(arr)-1; i++ {\n\t\tfmt.Fprintf(wr, \"%v \", arr[i])\n\t}\n\tif len(arr)\
     \ > 0 {\n\t\tfmt.Fprintf(wr, \"%v\", arr[len(arr)-1])\n\t}\n\tfmt.Fprintf(wr,\
     \ \"\\n\")\n}\n\nfunc fill[T any](v []T, x T) {\n\tfor i := 0; i < len(v); i++\
-    \ {\n\t\tv[i] = x\n\t}\n}\n\nfunc min[T constraints.Ordered](a T, b T) T {\n\t\
-    if a < b {\n\t\treturn a\n\t}\n\treturn b\n}\n\nfunc max[T constraints.Ordered](a\
-    \ T, b T) T {\n\tif a > b {\n\t\treturn a\n\t}\n\treturn b\n}\n\nfunc chmin[T\
-    \ constraints.Ordered](a *T, b T) bool {\n\tif *a > b {\n\t\t*a = b\n\t\treturn\
-    \ true\n\t}\n\treturn false\n}\n\nfunc chmax[T constraints.Ordered](a *T, b T)\
-    \ bool {\n\tif *a < b {\n\t\t*a = b\n\t\treturn true\n\t}\n\treturn false\n}\n\
-    \nfunc abs[T constraints.Integer | constraints.Float](a T) T {\n\tif a >= 0 {\n\
-    \t\treturn a\n\t}\n\treturn -a\n}\n\nfunc accumulate[T any](v []T, init T, op\
-    \ func(acc T, x T) T) T {\n\tfor i := 0; i < len(v); i++ {\n\t\tinit = op(init,\
-    \ v[i])\n\t}\n\treturn init\n}\n\nfunc accumulateDefault[T constraints.Integer\
-    \ | constraints.Float](v []T) T {\n\treturn accumulate(v, 0, func(acc T, x T)\
-    \ T {\n\t\treturn acc + x\n\t})\n}\n\nfunc minElement[T constraints.Ordered](v\
-    \ []T) int {\n\tif len(v) == 0 {\n\t\treturn 0\n\t}\n\titr := 0\n\tmn := v[0]\n\
-    \tfor i := 1; i < len(v); i++ {\n\t\tif chmin(&mn, v[i]) {\n\t\t\titr = i\n\t\t\
-    }\n\t}\n\treturn itr\n}\n\nfunc maxElement[T constraints.Ordered](v []T) int {\n\
-    \tif len(v) == 0 {\n\t\treturn 0\n\t}\n\titr := 0\n\tmx := v[0]\n\tfor i := 1;\
-    \ i < len(v); i++ {\n\t\tif chmax(&mx, v[i]) {\n\t\t\titr = i\n\t\t}\n\t}\n\t\
-    return itr\n}\n\nfunc lowerBound[T constraints.Ordered](v []T, x T) int {\n\t\
-    itr := sort.Search(len(v), func(i int) bool {\n\t\treturn v[i] >= x\n\t})\n\t\
-    return itr\n}\n\nfunc upperBound[T constraints.Ordered](v []T, x T) int {\n\t\
-    itr := sort.Search(len(v), func(i int) bool {\n\t\treturn v[i] > x\n\t})\n\treturn\
-    \ itr\n}\n\nfunc main() {\n\tsc.Split(bufio.ScanWords)\n\tsc.Buffer([]byte{},\
+    \ {\n\t\tv[i] = x\n\t}\n}\n\nfunc min[T constraints.Ordered](a, b T) T {\n\tif\
+    \ a < b {\n\t\treturn a\n\t}\n\treturn b\n}\n\nfunc max[T constraints.Ordered](a,\
+    \ b T) T {\n\tif a > b {\n\t\treturn a\n\t}\n\treturn b\n}\n\nfunc chmin[T constraints.Ordered](a\
+    \ *T, b T) bool {\n\tif *a > b {\n\t\t*a = b\n\t\treturn true\n\t}\n\treturn false\n\
+    }\n\nfunc chmax[T constraints.Ordered](a *T, b T) bool {\n\tif *a < b {\n\t\t\
+    *a = b\n\t\treturn true\n\t}\n\treturn false\n}\n\nfunc abs[T constraints.Integer\
+    \ | constraints.Float](a T) T {\n\tif a >= 0 {\n\t\treturn a\n\t}\n\treturn -a\n\
+    }\n\nfunc accumulate[T any](v []T, init T, op func(acc, x T) T) T {\n\tfor i :=\
+    \ 0; i < len(v); i++ {\n\t\tinit = op(init, v[i])\n\t}\n\treturn init\n}\n\nfunc\
+    \ accumulateDefault[T constraints.Integer | constraints.Float](v []T) T {\n\t\
+    return accumulate(v, 0, func(acc, x T) T {\n\t\treturn acc + x\n\t})\n}\n\nfunc\
+    \ minElement[T constraints.Ordered](v []T) int {\n\tif len(v) == 0 {\n\t\treturn\
+    \ 0\n\t}\n\titr := 0\n\tmn := v[0]\n\tfor i := 1; i < len(v); i++ {\n\t\tif chmin(&mn,\
+    \ v[i]) {\n\t\t\titr = i\n\t\t}\n\t}\n\treturn itr\n}\n\nfunc maxElement[T constraints.Ordered](v\
+    \ []T) int {\n\tif len(v) == 0 {\n\t\treturn 0\n\t}\n\titr := 0\n\tmx := v[0]\n\
+    \tfor i := 1; i < len(v); i++ {\n\t\tif chmax(&mx, v[i]) {\n\t\t\titr = i\n\t\t\
+    }\n\t}\n\treturn itr\n}\n\nfunc lowerBound[T constraints.Ordered](v []T, x T)\
+    \ int {\n\titr := sort.Search(len(v), func(i int) bool {\n\t\treturn v[i] >= x\n\
+    \t})\n\treturn itr\n}\n\nfunc upperBound[T constraints.Ordered](v []T, x T) int\
+    \ {\n\titr := sort.Search(len(v), func(i int) bool {\n\t\treturn v[i] > x\n\t\
+    })\n\treturn itr\n}\n\nfunc main() {\n\tsc.Split(bufio.ScanWords)\n\tsc.Buffer([]byte{},\
     \ math.MaxInt32)\n\tdefer wr.Flush()\n\n\tout(inf, linf, eps, mod, mod2)\n\n\t\
     n, m, s := getInt(), getFloat64(), getString()\n\tout(n, m, s)\n\n\tv, vs := getInts(n),\
     \ getStrings(n)\n\toutArray(v)\n\toutArray(vs)\n\n\tfill(v, -1)\n\toutArray(v)\n\
@@ -204,18 +203,6 @@ data:
     \ minElement(w), maxElement(w))\n\n\tsort.Ints(w)\n\tout(w, lowerBound(w, 3),\
     \ upperBound(w, 3))\n}\n"
   dependsOn:
-  - test/aoj-GRL_1_A-dijkstra.test.go
-  - test/aoj-ALDS1_9_C-binary_haep117.test.go
-  - test/aoj-ALDS1_3_C-deque.test.go
-  - test/aoj-ALDS1_3_B-queue.test.go
-  - test/aoj-ALDS1_9_C-binary_haep.test.go
-  - test/aoj-ALDS1_3_B-queue117.test.go
-  - test/aoj-ALDS1_3_C-deque117.test.go
-  - test/aoj-GRL_1_B-bellman_ford.test.go
-  - test/aoj-ITP1_1_A.test.go
-  - test/aoj-DSL_1_A-union_find.test.go
-  - test/aoj-ALDS1_3_A-stack.test.go
-  - test/aoj-ALDS1_3_A-stack117.test.go
   - algorithm/bellman_ford.go
   - algorithm/stack117.go
   - algorithm/binary_heap117.go
@@ -227,6 +214,18 @@ data:
   - algorithm/queue.go
   - algorithm/binary_heap.go
   - algorithm/stack.go
+  - verify/aoj-GRL_1_A-dijkstra.test.go
+  - verify/aoj-ALDS1_9_C-binary_haep117.test.go
+  - verify/aoj-ALDS1_3_C-deque.test.go
+  - verify/aoj-ALDS1_3_B-queue.test.go
+  - verify/aoj-ALDS1_9_C-binary_haep.test.go
+  - verify/aoj-ALDS1_3_B-queue117.test.go
+  - verify/aoj-ALDS1_3_C-deque117.test.go
+  - verify/aoj-GRL_1_B-bellman_ford.test.go
+  - verify/aoj-ITP1_1_A.test.go
+  - verify/aoj-DSL_1_A-union_find.test.go
+  - verify/aoj-ALDS1_3_A-stack.test.go
+  - verify/aoj-ALDS1_3_A-stack117.test.go
   - main117.go
   isVerificationFile: false
   path: main.go
@@ -243,21 +242,21 @@ data:
   - algorithm/binary_heap.go
   - algorithm/stack.go
   - main117.go
-  timestamp: '2024-08-27 21:19:54+09:00'
+  timestamp: '2024-08-28 00:28:44+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj-GRL_1_A-dijkstra.test.go
-  - test/aoj-ALDS1_9_C-binary_haep117.test.go
-  - test/aoj-ALDS1_3_C-deque.test.go
-  - test/aoj-ALDS1_3_B-queue.test.go
-  - test/aoj-ALDS1_9_C-binary_haep.test.go
-  - test/aoj-ALDS1_3_B-queue117.test.go
-  - test/aoj-ALDS1_3_C-deque117.test.go
-  - test/aoj-GRL_1_B-bellman_ford.test.go
-  - test/aoj-ITP1_1_A.test.go
-  - test/aoj-DSL_1_A-union_find.test.go
-  - test/aoj-ALDS1_3_A-stack.test.go
-  - test/aoj-ALDS1_3_A-stack117.test.go
+  - verify/aoj-GRL_1_A-dijkstra.test.go
+  - verify/aoj-ALDS1_9_C-binary_haep117.test.go
+  - verify/aoj-ALDS1_3_C-deque.test.go
+  - verify/aoj-ALDS1_3_B-queue.test.go
+  - verify/aoj-ALDS1_9_C-binary_haep.test.go
+  - verify/aoj-ALDS1_3_B-queue117.test.go
+  - verify/aoj-ALDS1_3_C-deque117.test.go
+  - verify/aoj-GRL_1_B-bellman_ford.test.go
+  - verify/aoj-ITP1_1_A.test.go
+  - verify/aoj-DSL_1_A-union_find.test.go
+  - verify/aoj-ALDS1_3_A-stack.test.go
+  - verify/aoj-ALDS1_3_A-stack117.test.go
 documentation_of: main.go
 layout: document
 redirect_from:

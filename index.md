@@ -45,43 +45,43 @@ data:
       path: main117.go
       title: main117.go
   verificationCategories:
-  - name: test
+  - name: verify
     pages:
     - icon: ':heavy_check_mark:'
-      path: test/aoj-ALDS1_3_A-stack.test.go
-      title: test/aoj-ALDS1_3_A-stack.test.go
+      path: verify/aoj-ALDS1_3_A-stack.test.go
+      title: verify/aoj-ALDS1_3_A-stack.test.go
     - icon: ':heavy_check_mark:'
-      path: test/aoj-ALDS1_3_A-stack117.test.go
-      title: test/aoj-ALDS1_3_A-stack117.test.go
+      path: verify/aoj-ALDS1_3_A-stack117.test.go
+      title: verify/aoj-ALDS1_3_A-stack117.test.go
     - icon: ':heavy_check_mark:'
-      path: test/aoj-ALDS1_3_B-queue.test.go
-      title: test/aoj-ALDS1_3_B-queue.test.go
+      path: verify/aoj-ALDS1_3_B-queue.test.go
+      title: verify/aoj-ALDS1_3_B-queue.test.go
     - icon: ':heavy_check_mark:'
-      path: test/aoj-ALDS1_3_B-queue117.test.go
-      title: test/aoj-ALDS1_3_B-queue117.test.go
+      path: verify/aoj-ALDS1_3_B-queue117.test.go
+      title: verify/aoj-ALDS1_3_B-queue117.test.go
     - icon: ':heavy_check_mark:'
-      path: test/aoj-ALDS1_3_C-deque.test.go
-      title: test/aoj-ALDS1_3_C-deque.test.go
+      path: verify/aoj-ALDS1_3_C-deque.test.go
+      title: verify/aoj-ALDS1_3_C-deque.test.go
     - icon: ':heavy_check_mark:'
-      path: test/aoj-ALDS1_3_C-deque117.test.go
-      title: test/aoj-ALDS1_3_C-deque117.test.go
+      path: verify/aoj-ALDS1_3_C-deque117.test.go
+      title: verify/aoj-ALDS1_3_C-deque117.test.go
     - icon: ':heavy_check_mark:'
-      path: test/aoj-ALDS1_9_C-binary_haep.test.go
-      title: test/aoj-ALDS1_9_C-binary_haep.test.go
+      path: verify/aoj-ALDS1_9_C-binary_haep.test.go
+      title: verify/aoj-ALDS1_9_C-binary_haep.test.go
     - icon: ':heavy_check_mark:'
-      path: test/aoj-ALDS1_9_C-binary_haep117.test.go
-      title: test/aoj-ALDS1_9_C-binary_haep117.test.go
+      path: verify/aoj-ALDS1_9_C-binary_haep117.test.go
+      title: verify/aoj-ALDS1_9_C-binary_haep117.test.go
     - icon: ':heavy_check_mark:'
-      path: test/aoj-DSL_1_A-union_find.test.go
-      title: test/aoj-DSL_1_A-union_find.test.go
+      path: verify/aoj-DSL_1_A-union_find.test.go
+      title: verify/aoj-DSL_1_A-union_find.test.go
     - icon: ':heavy_check_mark:'
-      path: test/aoj-GRL_1_A-dijkstra.test.go
-      title: test/aoj-GRL_1_A-dijkstra.test.go
+      path: verify/aoj-GRL_1_A-dijkstra.test.go
+      title: verify/aoj-GRL_1_A-dijkstra.test.go
     - icon: ':heavy_check_mark:'
-      path: test/aoj-GRL_1_B-bellman_ford.test.go
-      title: test/aoj-GRL_1_B-bellman_ford.test.go
+      path: verify/aoj-GRL_1_B-bellman_ford.test.go
+      title: verify/aoj-GRL_1_B-bellman_ford.test.go
     - icon: ':heavy_check_mark:'
-      path: test/aoj-ITP1_1_A.test.go
-      title: test/aoj-ITP1_1_A.test.go
+      path: verify/aoj-ITP1_1_A.test.go
+      title: verify/aoj-ITP1_1_A.test.go
 layout: toppage
 ---
