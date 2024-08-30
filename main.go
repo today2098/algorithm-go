@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"math"
 	"os"
-	"sort"
 	"strconv"
 
 	"golang.org/x/exp/constraints"
@@ -113,61 +112,6 @@ func chmax[T constraints.Ordered](a *T, b T) bool {
 	return false
 }
 
-func accumulate[T any](v []T, init T, op func(acc, x T) T) T {
-	for i := 0; i < len(v); i++ {
-		init = op(init, v[i])
-	}
-	return init
-}
-
-func accumulateDefault[T constraints.Integer | constraints.Float](v []T) T {
-	return accumulate(v, 0, func(acc, x T) T {
-		return acc + x
-	})
-}
-
-func minElement[T constraints.Ordered](v []T) int {
-	if len(v) == 0 {
-		return 0
-	}
-	itr := 0
-	mn := v[0]
-	for i := 1; i < len(v); i++ {
-		if chmin(&mn, v[i]) {
-			itr = i
-		}
-	}
-	return itr
-}
-
-func maxElement[T constraints.Ordered](v []T) int {
-	if len(v) == 0 {
-		return 0
-	}
-	itr := 0
-	mx := v[0]
-	for i := 1; i < len(v); i++ {
-		if chmax(&mx, v[i]) {
-			itr = i
-		}
-	}
-	return itr
-}
-
-func lowerBound[T constraints.Ordered](v []T, x T) int {
-	itr := sort.Search(len(v), func(i int) bool {
-		return v[i] >= x
-	})
-	return itr
-}
-
-func upperBound[T constraints.Ordered](v []T, x T) int {
-	itr := sort.Search(len(v), func(i int) bool {
-		return v[i] > x
-	})
-	return itr
-}
-
 func main() {
 	sc.Split(bufio.ScanWords)
 	sc.Buffer([]byte{}, math.MaxInt32)
@@ -191,11 +135,4 @@ func main() {
 	chmin(&b, a)
 	chmax(&c, a)
 	out(a, b, c)
-
-	w := []int{3, 1, 4, 2, 5}
-	out(accumulateDefault(w))
-	out(w, minElement(w), maxElement(w))
-
-	sort.Ints(w)
-	out(w, lowerBound(w, 3), upperBound(w, 3))
 }

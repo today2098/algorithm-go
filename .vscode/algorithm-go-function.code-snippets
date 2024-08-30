@@ -27,5 +27,80 @@
 			"}"
 		],
 		"description": ""
+	},
+	"Accumulate": {
+		"scope": "go",
+		"prefix": "Accumulate",
+		"body": [
+			"func Accumulate[T any](v []T, init T, op func(acc, x T) T) T {",
+			"\tfor i := 0; i < len(v); i++ {",
+			"\t\tinit = op(init, v[i])",
+			"\t}",
+			"\treturn init",
+			"}",
+			"",
+			"func DefaultAccumulate[T constraints.Integer | constraints.Float](v []T) T {",
+			"\treturn Accumulate(v, 0, func(acc, x T) T {",
+			"\t\treturn acc + x",
+			"\t})",
+			"}"
+		],
+		"description": ""
+	},
+	"LowerBound, UpperBound": {
+		"scope": "go",
+		"prefix": "LowerBound, UpperBound",
+		"body": [
+			"func LowerBound[T constraints.Ordered](v []T, x T) int {",
+			"\titr := sort.Search(len(v), func(i int) bool {",
+			"\t\treturn v[i] >= x",
+			"\t})",
+			"\treturn itr",
+			"}",
+			"",
+			"func UpperBound[T constraints.Ordered](v []T, x T) int {",
+			"\titr := sort.Search(len(v), func(i int) bool {",
+			"\t\treturn v[i] > x",
+			"\t})",
+			"\treturn itr",
+			"}"
+		],
+		"description": ""
+	},
+	"MinElement, MaxElement": {
+		"scope": "go",
+		"prefix": "MinElement, MaxElement",
+		"body": [
+			"func MinElement[T constraints.Ordered](v []T) int {",
+			"\tif len(v) == 0 {",
+			"\t\treturn 0",
+			"\t}",
+			"\titr := 0",
+			"\tmn := v[0]",
+			"\tfor i := 1; i < len(v); i++ {",
+			"\t\tif v[i] < mn {",
+			"\t\t\tmn = v[i]",
+			"\t\t\titr = i",
+			"\t\t}",
+			"\t}",
+			"\treturn itr",
+			"}",
+			"",
+			"func MaxElement[T constraints.Ordered](v []T) int {",
+			"\tif len(v) == 0 {",
+			"\t\treturn 0",
+			"\t}",
+			"\titr := 0",
+			"\tmx := v[0]",
+			"\tfor i := 1; i < len(v); i++ {",
+			"\t\tif v[i] > mx {",
+			"\t\t\tmx = v[i]",
+			"\t\t\titr = i",
+			"\t\t}",
+			"\t}",
+			"\treturn itr",
+			"}"
+		],
+		"description": ""
 	}
 }
