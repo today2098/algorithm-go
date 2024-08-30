@@ -6,8 +6,6 @@ import (
 	"math"
 	"os"
 	"strconv"
-
-	"golang.org/x/exp/constraints"
 )
 
 const (
@@ -82,36 +80,6 @@ func fill[T any](v []T, x T) {
 	}
 }
 
-func min[T constraints.Ordered](a, b T) T {
-	if a < b {
-		return a
-	}
-	return b
-}
-
-func max[T constraints.Ordered](a, b T) T {
-	if a > b {
-		return a
-	}
-	return b
-}
-
-func chmin[T constraints.Ordered](a *T, b T) bool {
-	if *a > b {
-		*a = b
-		return true
-	}
-	return false
-}
-
-func chmax[T constraints.Ordered](a *T, b T) bool {
-	if *a < b {
-		*a = b
-		return true
-	}
-	return false
-}
-
 func main() {
 	sc.Split(bufio.ScanWords)
 	sc.Buffer([]byte{}, math.MaxInt32)
@@ -128,11 +96,4 @@ func main() {
 
 	fill(v, -1)
 	outArray(v)
-
-	out(min("hello", "world"), max("hello", "world"))
-
-	a, b, c := 0, 1, -1
-	chmin(&b, a)
-	chmax(&c, a)
-	out(a, b, c)
 }

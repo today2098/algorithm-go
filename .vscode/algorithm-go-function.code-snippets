@@ -47,6 +47,28 @@
 		],
 		"description": ""
 	},
+	"Chmin, Chmax": {
+		"scope": "go",
+		"prefix": "Chmin, Chmax",
+		"body": [
+			"func Chmin[T constraints.Ordered](a *T, b T) bool {",
+			"\tif *a > b {",
+			"\t\t*a = b",
+			"\t\treturn true",
+			"\t}",
+			"\treturn false",
+			"}",
+			"",
+			"func Chmax[T constraints.Ordered](a *T, b T) bool {",
+			"\tif *a < b {",
+			"\t\t*a = b",
+			"\t\treturn true",
+			"\t}",
+			"\treturn false",
+			"}"
+		],
+		"description": ""
+	},
 	"LowerBound, UpperBound": {
 		"scope": "go",
 		"prefix": "LowerBound, UpperBound",
@@ -63,6 +85,26 @@
 			"\t\treturn v[i] > x",
 			"\t})",
 			"\treturn itr",
+			"}"
+		],
+		"description": ""
+	},
+	"Min, Max": {
+		"scope": "go",
+		"prefix": "Min, Max",
+		"body": [
+			"func Min[T constraints.Ordered](a, b T) T {",
+			"\tif a < b {",
+			"\t\treturn a",
+			"\t}",
+			"\treturn b",
+			"}",
+			"",
+			"func Max[T constraints.Ordered](a, b T) T {",
+			"\tif a > b {",
+			"\t\treturn a",
+			"\t}",
+			"\treturn b",
 			"}"
 		],
 		"description": ""
