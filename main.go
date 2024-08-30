@@ -113,13 +113,6 @@ func chmax[T constraints.Ordered](a *T, b T) bool {
 	return false
 }
 
-func abs[T constraints.Integer | constraints.Float](a T) T {
-	if a >= 0 {
-		return a
-	}
-	return -a
-}
-
 func accumulate[T any](v []T, init T, op func(acc, x T) T) T {
 	for i := 0; i < len(v); i++ {
 		init = op(init, v[i])
@@ -198,8 +191,6 @@ func main() {
 	chmin(&b, a)
 	chmax(&c, a)
 	out(a, b, c)
-
-	out(abs(-10), abs(10))
 
 	w := []int{3, 1, 4, 2, 5}
 	out(accumulateDefault(w))
