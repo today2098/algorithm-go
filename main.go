@@ -8,6 +8,24 @@ import (
 	"strconv"
 )
 
+func main() {
+	sc.Split(bufio.ScanWords)
+	sc.Buffer([]byte{}, math.MaxInt32)
+	defer wr.Flush()
+
+	out(inf, linf, eps, mod, mod2)
+
+	n, m, s := getInt(), getFloat64(), getString()
+	out(n, m, s)
+
+	v, vs := getInts(n), getStrings(n)
+	outArray(v)
+	outArray(vs)
+
+	fill(v, -1)
+	outArray(v)
+}
+
 const (
 	inf  int     = 1e9
 	linf int     = 1e18
@@ -78,22 +96,4 @@ func fill[T any](v []T, x T) {
 	for i := 0; i < len(v); i++ {
 		v[i] = x
 	}
-}
-
-func main() {
-	sc.Split(bufio.ScanWords)
-	sc.Buffer([]byte{}, math.MaxInt32)
-	defer wr.Flush()
-
-	out(inf, linf, eps, mod, mod2)
-
-	n, m, s := getInt(), getFloat64(), getString()
-	out(n, m, s)
-
-	v, vs := getInts(n), getStrings(n)
-	outArray(v)
-	outArray(vs)
-
-	fill(v, -1)
-	outArray(v)
 }
